@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level width="3200" height="450">    
+<entity x="0" y="168" type="ground"/>
+
+
+<entity x="1910" y="167" type="stop"/>
+
+<entity x="710" y="250" type="metr_20"/>
+<entity x="1310" y="250" type="metr_40"/>
+
+<entity x="2150" y="180" type="jump_yuard"/>
+
+
+<entity x="0" y="0" type="down_mark"/>
+<entity x="0" y="0" type="up_mark"/>
+
+
+<entity x="130" y="200" type="player"/>
+
+    
+</level>

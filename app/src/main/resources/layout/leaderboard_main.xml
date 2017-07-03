@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:layout_gravity="top|center_horizontal" android:background="@drawable/game_lb_bg1"
+    android:orientation="vertical" android:weightSum="10.3">
+
+    <!-- Main ListView      Always give id value as list(@android:id/list) -->
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@drawable/leader" android:gravity="right|bottom" android:weightSum="9">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:layout_weight="6" android:orientation="vertical" android:weightSum="5">
+
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="0dp"
+                android:layout_gravity="left" android:layout_weight="2"
+                android:gravity="center_vertical" android:orientation="horizontal"
+                android:weightSum="9">
+
+                <Button android:id="@+id/mlb_l_nick_point" style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:alpha="0.8" android:background="@drawable/lb_pers_rec_panel"
+                    android:clickable="false" android:focusable="false"
+                    android:focusableInTouchMode="false" android:gravity="center"
+                    android:longClickable="false" android:padding="5dp" android:paddingBottom="5dp"
+                    android:textColor="@color/win_text" android:textSize="20sp"
+                    android:typeface="serif" android:visibility="visible" />
+
+                <ImageView android:id="@+id/mlb_btnBack" android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:alpha="0.7"
+                    android:background="@color/win_background_tranc" android:scaleType="fitEnd"
+                    android:src="@drawable/anm_exit" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/ll" android:layout_width="fill_parent"
+                android:layout_height="0dp" android:layout_gravity="top|left"
+                android:layout_weight="1" android:focusableInTouchMode="true"
+                android:gravity="bottom" android:orientation="horizontal">
+
+                <TextView android:id="@+id/textView2" style="@style/AppBaseTheme"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:gravity="left" android:text="@string/lb_week"
+                    android:textColor="@color/win_btPrEnd" />
+
+                <EditText android:id="@+id/mlb_etKw" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginLeft="3dp"
+                    android:layout_marginRight="30dp" android:background="#ffffff"
+                    android:inputType="number" android:lines="1" android:maxLength="2"
+                    android:minWidth="50dp" android:text="23"
+                    android:textColor="@color/winG_background"
+                    android:textColorHint="@color/win_background_tranc25" />
+
+                <TextView android:id="@+id/textView1" style="@style/AppTheme"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/lb_year" android:textColor="@color/win_btPrEnd" />
+
+                <EditText android:id="@+id/mlb_etGod" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginLeft="3dp"
+                    android:layout_marginRight="20dp" android:background="#ffffff"
+                    android:inputType="number" android:lines="1" android:maxLength="4"
+                    android:minWidth="70dp" android:text="2016"
+                    android:textColor="@color/winG_background"
+                    android:textColorHint="@color/win_background_tranc25" />
+
+                <Button android:id="@+id/mlb_set_current_date" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginRight="30dp"
+                    android:text="@string/lb_load" />
+
+                <Button android:id="@+id/mlb_set_current_week" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:focusableInTouchMode="false"
+                    android:text="@string/lb_set_cw" />
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="0dp"
+                android:layout_weight="2" android:gravity="bottom">
+
+                <Button android:id="@+id/mlb_game_type_run100"
+                    style="?android:attr/buttonStyleSmall" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:background="@drawable/btn_selector_run" android:gravity="center"
+                    android:paddingBottom="5dp" android:tag="41" />
+
+                <Button android:id="@+id/mlb_game_type_barier"
+                    style="?android:attr/buttonStyleSmall" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:background="@drawable/btn_selector_runpr" android:gravity="center"
+                    android:paddingBottom="5dp" android:tag="42" />
+
+                <Button android:id="@+id/mlb_game_type_jump" style="?android:attr/buttonStyleSmall"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:background="@drawable/btn_selector_jump"
+                    android:gravity="center" android:paddingBottom="5dp" android:tag="43" />
+
+                <Button android:id="@+id/mlb_game_type_pike" style="?android:attr/buttonStyleSmall"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:background="@drawable/btn_selector_pike"
+                    android:gravity="center" android:paddingBottom="5dp" android:tag="44" />
+
+                <Button android:id="@+id/mlb_game_type_shoot" style="?android:attr/buttonStyleSmall"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:background="@drawable/btn_selector_shoot"
+                    android:gravity="center" android:paddingBottom="5dp" android:tag="46" />
+
+
+                <Button android:id="@+id/mlb_game_type_arch" style="?android:attr/buttonStyleSmall"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:background="@drawable/btn_selector_arc"
+                    android:gravity="center" android:paddingBottom="5dp" android:tag="45" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView android:id="@+id/mlb_totalList" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:background="#110000ff"
+        android:cacheColorHint="@android:color/transparent" android:clickable="false"
+        android:divider="@color/win_txtGreen" android:dividerHeight="1dp" android:focusable="false"
+        android:focusableInTouchMode="false" android:paddingLeft="20dp" android:paddingRight="10dp"
+        android:paddingTop="20dp"></ListView>
+
+</LinearLayout>

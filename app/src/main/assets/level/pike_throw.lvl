@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level width="3200" height="450">    
+<entity x="0" y="168" type="ground"/>
+<entity x="0" y="168" type="ground_pl"/>
+
+<entity x="1370" y="160" type="grass"/>
+<entity x="1420" y="160" type="grass"/>
+<entity x="1520" y="160" type="grass"/>
+<entity x="1620" y="160" type="grass"/>
+<entity x="1720" y="160" type="grass"/>
+<entity x="1820" y="160" type="grass"/>
+<entity x="1789" y="160" type="metr_yuard"/>
+<entity x="2117" y="160" type="metr_yuard"/>
+<entity x="2447" y="160" type="metr_yuard"/>
+<entity x="2777" y="160" type="metr_yuard"/>
+<entity x="3111" y="160" type="metr_yuard"/>
+
+<entity x="1630" y="210" type="char_2"/>
+<entity x="1650" y="210" type="char_0"/>
+<entity x="1797" y="210" type="char_3"/>
+<entity x="1817" y="210" type="char_0"/>
+<entity x="1964" y="210" type="char_4"/>
+<entity x="1984" y="210" type="char_0"/>
+<entity x="2131" y="210" type="char_5"/>
+<entity x="2151" y="210" type="char_0"/>
+<entity x="2298" y="210" type="char_6"/>
+<entity x="2318" y="210" type="char_0"/>
+<entity x="2465" y="210" type="char_7"/>
+<entity x="2485" y="210" type="char_0"/>
+<entity x="2632" y="210" type="char_8"/>
+<entity x="2652" y="210" type="char_0"/>
+<entity x="2799" y="210" type="char_9"/>
+<entity x="2819" y="210" type="char_0"/>
+
+<entity x="2956" y="210" type="char_1"/>
+<entity x="2976" y="210" type="char_0"/>
+<entity x="2996" y="210" type="char_0"/>
+<entity x="3125" y="210" type="char_1"/>
+<entity x="3145" y="210" type="char_1"/>
+<entity x="3165" y="210" type="char_0"/>
+
+
+
+
+<entity x="1320" y="167" type="stop"/>
+
+
+
+
+<entity x="0" y="0" type="down_mark"/>
+<entity x="0" y="0" type="up_mark"/>
+
+
+<entity x="130" y="200" type="player"/>
+<entity x="130" y="200" type="pike"/>
+
+    
+</level>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level width="3200" height="450">    
+<entity x="0" y="170" type="ground"/>
+
+
+<entity x="3100" y="170" type="stop"/>
+<entity x="150" y="170" type="start"/>
+
+
+<entity x="710" y="250" type="metr_20"/>
+<entity x="1310" y="250" type="metr_40"/>
+<entity x="1910" y="250" type="metr_60"/>
+<entity x="2510" y="250" type="metr_80"/>
+<entity x="700" y="170" type="metr_line"/>
+<entity x="1300" y="170" type="metr_line"/>
+<entity x="1900" y="170" type="metr_line"/>
+<entity x="2500" y="170" type="metr_line"/>
+
+<entity x="700" y="182" type="barier"/>
+<entity x="940" y="182" type="barier"/>
+<entity x="1182" y="182" type="barier"/>
+<entity x="1420" y="182" type="barier"/>
+<entity x="1660" y="182" type="barier"/>
+<entity x="1900" y="182" type="barier"/>
+<entity x="2140" y="182" type="barier"/>
+<entity x="2380" y="182" type="barier"/>
+<entity x="2620" y="182" type="barier"/>
+<entity x="2860" y="182" type="barier"/>
+
+
+
+<entity x="130" y="200" type="player"/>
+
+<entity x="60" y="235" type="svetofor"/>
+    
+</level>

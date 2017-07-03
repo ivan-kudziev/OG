@@ -1,0 +1,93 @@
+<resources>
+
+    <string name="app_name">Атлетика+. Летние спортивные игры.</string>
+
+    <!--HUD  -->
+
+
+    <string name="game_hud_per_rec">личный рекорд: \n</string>
+    <string name="game_hud_per_progress">прогресс</string>
+    <string name="game_hud_wd_lb">мировые лидеры</string>
+    <string name="game_hud_rs_lb">Результат попытки!</string>
+    <string name="menu_hud_per_rec">личные достяжения: \n</string>
+    <string name="game_hud_ed_metr">м</string>
+    <string name="game_hud_ed_secs">сек</string>
+    <string name="game_hud_ed_points">очков</string>
+    <string name="game_false_start">фальш старт!</string>
+    <string name="game_dq">DQ, невозможный результат.</string>
+
+    <!-- Game -->
+    <!-- RUN 100 -->
+
+
+    <!-- RUN with bariers-->
+
+
+    <!-- Long JUMP -->
+
+
+    <!--  -->
+
+
+    <!--  -->
+
+
+    <!-- game elements -->
+    <string name="ge_personal_record_noinfo">Нет информации о пользователе.</string>
+    <string name="ge_personal_record_game">игра</string>
+    <string name="ge_personal_record_rank">место</string>
+    <string name="ge_personal_record_record">рекорд</string>
+    <string name="ge_personal_record_pr">личные рекорды</string>
+    <string name="ge_personal_record_wr">текущая неделя</string>
+
+
+    <string name="rate_panel_lb">Оцените игру ;)</string>
+    <string name="rate_panel_lb2">Рассказать \n другу.</string>
+    <string name="rate_panel_contact_subject">Атлетика+. Летние спортивные игры. Мои пожелания.
+    </string>
+    <string name="rate_panel_contact_body">Здраствуйте, разаботчики Атлетика+. Летние спортивные
+        игры. Ваша игра станет интересней и лучше если ...
+    </string>
+    <string name="rate_panel_invite_subject">Привет.</string>
+    <string name="rate_panel_invite_body">Привет, посмотри интересную игру в Play Маркете:
+        Атлетика+. Летние спортивные игры. Вот ссылка :
+        https://play.google.com/store/apps/details?id=by.kipind.game.olympicgames
+    </string>
+
+    <string name="lb_week">Неделя:</string>
+    <string name="lb_year">Год:</string>
+    <string name="lb_load">Загрузить</string>
+    <string name="lb_set_cw">Показать текущую неделю</string>
+
+
+    <string name="mmf_nick_label1">Введите имя</string>
+    <string name="mmf_nick_label2">Ваше имя</string>
+    <string name="mmf_nick_label_exd">Действует до:</string>
+    <string name="mmf_nick_label_idn">Ид.Номер:</string>
+
+    <string name="ls_lb_namecheck_fail">Ваш ник локальный.Вы можете обновить его в настройках,
+        доступ через главное меню.
+    </string>
+
+
+    <!-- leaderbord server -->
+    <string name="nick_saved">Вы успешно зарегистрированы.</string>
+    <string name="enterNick">Введите свой ник</string>
+    <string name="connection">Получение данных...</string>
+    <string name="connection_fail">Нет связи с сервером.</string>
+    <string name="local_save_fail">Ошибка при локальном сохранении.</string>
+    <string name="local_data_tran_fail">Передача данных не удалась=(</string>
+    <string name="local_save_nick">Ваш ник будет сохранен локально.</string>
+    <string name="nick_exist">Этот ник занят. Пожалуйста введите другой.</string>
+
+    <string name="net_game_lb_total_id">41</string>
+    <string name="lb_info_point">очков:</string>
+
+    <!--  -->
+    <string name="net_game_stat_union_id">41</string>
+
+    <!-- sound -->
+    <string name="mp_fail">Не удалось включить музыку.</string>
+
+
+</resources>

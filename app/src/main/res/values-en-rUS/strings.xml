@@ -1,0 +1,88 @@
+<resources>
+
+    <string name="app_name">Athletics+. Summer sports game.</string>
+
+    <!--HUD  -->
+
+
+    <string name="game_hud_per_rec">personal record: \n</string>
+    <string name="game_hud_per_progress">progress</string>
+    <string name="game_hud_wd_lb">world leadrs</string>
+    <string name="game_hud_rs_lb">Round result!</string>
+    <string name="menu_hud_per_rec">personal records: \n</string>
+    <string name="game_hud_ed_metr">m</string>
+    <string name="game_hud_ed_secs">sec</string>
+    <string name="game_hud_ed_points">points</string>
+    <string name="game_false_start">False Start!</string>
+
+    <!-- Game -->
+    <!-- RUN 100 -->
+
+
+    <!-- RUN with bariers-->
+
+
+    <!-- Long JUMP -->
+
+
+    <!--  -->
+
+
+    <!--  -->
+
+
+    <!-- game elements -->
+    <string name="ge_personal_record_noinfo">No information about player</string>
+    <string name="ge_personal_record_game">game</string>
+    <string name="ge_personal_record_rank">rank</string>
+    <string name="ge_personal_record_record">record</string>
+
+
+    <string name="rate_panel_lb">Rate game, please.</string>
+    <string name="rate_panel_lb2">Invite \n friends.</string>
+    <string name="rate_panel_contact_mail">if_ivan@tut.by</string>
+    <string name="rate_panel_contact_subject">Athletics+.Summer sports game. My wish</string>
+    <string name="rate_panel_contact_body">Hello, developers of #8230Athletics+.Summer sports game#8230. This game will be more interesting if ...</string>
+    <string name="rate_panel_invite_subject">Hi.</string>
+    <string name="rate_panel_invite_body">Hi, found interesting game: Athletics+.Summer sports game . Try it </string>
+
+
+    <string name="dl1_title">Play Market</string>
+    <string name="dl1_message">Please, rate game in PlayMarket, it is very important for me. Thanks.=)</string>
+    <string name="dl1_negative_answer">Later</string>
+    <string name="dl1_positive_answer">OK</string>
+
+    <string name="mmf_nick_label1">Enter name</string>
+    <string name="mmf_nick_label2">Your name</string>
+    <string name="mmf_nick_label_exd">Expiry Date:</string>
+    <string name="mmf_nick_label_idn">ID Number:</string>
+
+    <string name="ls_lb_namecheck_fail">Your nick is local.Please update it in main menu.</string>
+
+
+    <!-- leaderbord server -->
+    <string name="enterNick">Enter nickname</string>
+    <string name="connection">Loading data ...</string>
+    <string name="connection_fail">Connection failed.</string>
+    <string name="local_save_fail">Local save failed.</string>
+    <string name="local_data_tran_fail">Some data transaction failed =(</string>
+    <string name="local_save_nick">Your nick will be saved localy.</string>
+    <string name="nick_exist">This nickname is busy. Please select another</string>
+    <string name="nick_saved">You have successfully registered. </string>
+    <string name="net_game_lb_total_id">41</string>
+    <string name="lb_info_point">points:</string>
+
+    <!--  -->
+    <string name="net_game_stat_union_id">41</string>
+
+    <!-- sound -->
+    <string name="mp_fail">music player failed</string>
+
+    <!--  -->
+    <string name="ma_rb_difficult">Too difficult.</string>
+    <string name="ma_rb_time">No time to play.</string>
+    <string name="ma_rb_boring">Boring / is not interesting.</string>
+    <string name="ma_rb_error">Something does not work.</string>
+
+
+</resources>

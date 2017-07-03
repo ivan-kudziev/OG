@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level width="800" height="450">    
+
+<entity x="0" y="0" type="player"/>
+
+
+<entity x="55" y="112" type="ufo_l"/>
+<entity x="55" y="100" type="ufo_l_sh"/>
+<entity x="745" y="112" type="ufo_r"/>
+<entity x="745" y="100" type="ufo_r_sh"/>
+
+<entity x="300" y="200" type="area_l"/>
+<entity x="500" y="200" type="area_r"/>
+<entity x="300" y="200" type="areaR_l"/>
+<entity x="500" y="200" type="areaR_r"/>
+ 
+ <entity x="0" y="0" type="svetofor"/>
+ 
+    
+</level>
