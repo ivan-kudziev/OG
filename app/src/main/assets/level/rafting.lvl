@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<level width="800" height="450">    
+<level width="800" height="1450">
 
 
 
- <entity x="390" y="390" type="player"/>
+ <entity x="390" y="1400" type="player"/>
  <entity x="0" y="0" type="svetofor"/>
  
     

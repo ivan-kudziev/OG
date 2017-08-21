@@ -74,6 +74,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	// ----------
 	private final int lvlWidth = 800;
 	private final int lvlHeight = 450;
+	private final int lvlTotalHeight = 1450;
 
 	private HUD gameHUD;
 	private Svetofor svetofor;
@@ -110,6 +111,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	private Float wPersonalRecord;
 	private Integer tCounter = 0;
 
+
 	@Override
 	public void createScene() {
 		this.wPersonalRecord = GameSettings.W_RECORD_RAFTING;
@@ -144,10 +146,18 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	private void createBackground() {
 
-		attachChild(new Sprite(this.lvlWidth / 2f, 5 * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
+		final List<Sprite> greenFon=new ArrayList<>();
+		for (int i = 1; i <= 7; i=i+2) {
+			greenFon.add(new Sprite(this.lvlWidth / 2f, (this.lvlTotalHeight-this.lvlHeight)+i * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
+		}
+		for (Sprite sp : greenFon) {
+			attachChild(sp);
+		}
+
+	/*	attachChild(new Sprite(this.lvlWidth / 2f, 5 * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
 		attachChild(new Sprite(this.lvlWidth / 2f, 3 * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
 		attachChild(new Sprite(this.lvlWidth / 2f, 1 * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
-
+*/
 		berega = new ArrayList<>();
 		float deltaX = this.lvlHeight, deltaY = this.lvlWidth / 2f;
 		Random random = new Random(GameSettings.WEEK_OF_YEAR);
@@ -172,7 +182,18 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		attachChild(new Sprite(this.lvlWidth / 4, this.lvlHeight / 2f, resourcesManager.gameGraf.get("shoot_tree"), vbom));
 		attachChild(new Sprite(3 * this.lvlWidth / 4, this.lvlHeight / 2, resourcesManager.gameGraf.get("shoot_tree"), vbom));
 
+		this.registerUpdateHandler(new TimerHandler(1 / 60f, true, new ITimerCallback() {
+			@Override
+			public void onTimePassed(final TimerHandler pTimerHandler) {
 
+				for (Sprite sp : greenFon) {
+					if(sp.getSceneCenterCoordinates()[1]-sp.getHeight()/2>camera.getCenterY()+lvlHeight/2){
+						sp.setY(camera.getCenterY()-lvlHeight/2-sp.getHeight()/2);
+					}
+				}
+
+			}
+		}));
 	}
 
 	private void createHUD() {
@@ -299,6 +320,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		gameHUD.registerTouchArea(hudAreaBlackAlpha);
 		gameHUD.setTouchAreaBindingOnActionDownEnabled(true);
 
+
 		gameHUD.attachChild(raundResFon);
 		gameHUD.attachChild(roundResLabel);
 		gameHUD.attachChild(hudAreaBordersBl);
@@ -314,22 +336,25 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		// gameHUD.attachChild(ufoLeftText);
 		gameHUD.attachChild(worldRecLabel);
 
+
 		gameHUD.registerUpdateHandler(new TimerHandler(1 / 60f, true, new ITimerCallback() {
 			@Override
 			public void onTimePassed(final TimerHandler pTimerHandler) {
 				/*if (svetofor.getStatus() == Color.GREEN) {
 					tCounter++;
 					scoreText.setText(String.valueOf((double) tCounter / 1000));
-				}*/
+				} else {
+					bout.body.setLinearVelocity(0, 0);
+				}
+*/
 
-
-				scoreText.setText(String.valueOf(bout.body.getLinearVelocity().x));
+				scoreText.setText(String.valueOf(camera.getCenterY()));
 				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed()) {
 					bout.body.setLinearVelocity(0, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
 				}
 
 				if (Math.abs(bout.body.getLinearVelocity().x) > 0.02) {
-					bout.body.setLinearVelocity( (bout.body.getLinearVelocity().x < 0 ? bout.body.getLinearVelocity().x + 0.01f : bout.body.getLinearVelocity().x - 0.01f),bout.body.getLinearVelocity().y);
+					bout.body.setLinearVelocity((bout.body.getLinearVelocity().x < 0 ? bout.body.getLinearVelocity().x + 0.01f : bout.body.getLinearVelocity().x - 0.01f), bout.body.getLinearVelocity().y);
 					if (Math.abs(bout.body.getLinearVelocity().x) < 0.02) {
 						bout.setCurrentTileIndex(0);
 					}
@@ -362,6 +387,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 				return RaftingGS.this;
 			}
+
 		});
 
 		levelLoader.registerEntityLoader(new EntityLoader<SimpleLevelEntityLoaderData>(TAG_ENTITY) {
@@ -375,12 +401,6 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 				// final String asa = type.substring(0, 5);
 
 				if (type.equals(TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_PLAYER)) {
-					/*bout = new AnimatedSprite(SCENE_WIDTH / 2f, SCENE_HEIGHT / 5f, (ITiledTextureRegion) ResourcesManager.getInstance().gameGraf.get("player_region"), vbom);
-					bout.setCurrentTileIndex(0);
-					camera.setChaseEntity(bout);
-					// player.setMaxSpeed(11);
-					levelObject = bout;
-					//   levelObject = null;*/
 
 					bout = new Kaiak(x, y, vbom, camera, physicsWorld) {
 						public void onFinish() {
@@ -536,8 +556,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		svetofor.Start();
 
 		bout.reSet();
-		//camera.setChaseEntity(player);
-
+		camera.setChaseEntity(bout);
 	}
 
 }
