@@ -249,7 +249,7 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
         menuItemPikeThrow.setPosition(0 - (3 * mElWgh), mElCrnt - mElHgh);
         menuItemArchery.setPosition(0 - (2 * mElWgh), mElCrnt - mElHgh);
         menuItemShooting.setPosition(0 - (mElWgh), mElCrnt - mElHgh);
-        menuItemRafting.setPosition(0 -4 * mElWgh, -SCENE_HEIGHT / 2 + mElHgh);
+        menuItemRafting.setPosition(0 - (3 * mElWgh), mElCrnt - 3*mElHgh);
 
         upateAdBtnPos();
 

@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-import com.appodeal.ads.Appodeal;
-import com.appodeal.ads.InterstitialCallbacks;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
@@ -33,7 +32,7 @@ public class AdMainActivity extends Activity implements OnClickListener {
 	ivLeaderBord = (ImageView) findViewById(R.id.imageView1);
 	ivLeaderBord.setOnClickListener(this);
 
-	/*mInterstitialAd = new InterstitialAd(this);
+	mInterstitialAd = new InterstitialAd(this);
 	mInterstitialAd.setAdUnitId(unLockLvlAdBlock);
 
 	mInterstitialAd.setAdListener(new AdListener() {
@@ -65,47 +64,9 @@ public class AdMainActivity extends Activity implements OnClickListener {
 	    }
 
 	});
-*/
-
-        Appodeal.setInterstitialCallbacks(new InterstitialCallbacks() {
-
-            @Override
-            public void onInterstitialLoaded(boolean isPrecache) {
-              /* if(!showAdFlag){
-                   showAdFlag=showRevVideo();
-               }
 
 
-*/
-            }
-
-            @Override
-            public void onInterstitialFailedToLoad() {
-
-                    ivLeaderBord.setVisibility(View.VISIBLE);
-                    loadAdErrorCode = -1;
-
-            }
-
-            @Override
-            public void onInterstitialShown() {
-
-            }
-
-            @Override
-            public void onInterstitialClicked() {
-
-            }
-
-            @Override
-            public void onInterstitialClosed() {
-                backToGame(-777);
-            }
-
-
-        });
-
-//RequestInterstatial();
+RequestInterstatial();
 
         if(!showAdFlag){
             showAdFlag=showRevVideo();
@@ -130,19 +91,13 @@ public class AdMainActivity extends Activity implements OnClickListener {
     public boolean showRevVideo() {
 	boolean res = false;
 
-        if(Appodeal.isLoaded(Appodeal.INTERSTITIAL)){
-            Appodeal.show(this, Appodeal.INTERSTITIAL);
-            loadAdErrorCode=-777;
-            res = true;
-        }else{
 
-        }
 
-	/*if (mInterstitialAd.isLoaded()) {
+	if (mInterstitialAd.isLoaded()) {
 	    mInterstitialAd.show();
 
 	} else {
-	}*/
+	}
 
 	return res;
     }

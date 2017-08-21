@@ -7,7 +7,6 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 
-import com.appodeal.ads.Appodeal;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -51,10 +50,6 @@ public class GameActivity extends BaseGameActivity {
     @Override
     protected void onSetContentView() {
 
-		String appKey = "647a0f43cb668742d7034c39a9e8b69527c3e6741c2ab189";
-		Appodeal.disableLocationPermissionCheck();
-		//Appodeal.setTesting(true);
-		Appodeal.initialize(this, appKey, Appodeal.INTERSTITIAL);
 
 	// ads set
 	if (adView != null) {

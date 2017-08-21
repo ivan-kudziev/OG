@@ -55,8 +55,8 @@ public abstract class Kaiak extends AnimatedSprite {
 	super(pX, pY, (ITiledTextureRegion) ResourcesManager.getInstance().gameGraf.get("player_region"), vbo);
 	// this.setScale(0.45f);
 
-	this.setHeight(this.getHeight() * 0.4f);
-	this.setWidth(this.getWidth() * 0.4f);
+	this.setHeight(this.getHeight() * 1f);
+	this.setWidth(this.getWidth() * 1f);
 
 	createPhysics(camera, physicsWorld);
 
@@ -99,7 +99,7 @@ public abstract class Kaiak extends AnimatedSprite {
     private void createPhysics(final Camera camera, PhysicsWorld physicsWorld) {
 	body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyType.DynamicBody, PhysicsFactory.createFixtureDef(0, 0, 0));
 
-	body.setUserData("player");
+	body.setUserData("bout");
 	body.getFixtureList().get(0).setFriction(0.25f);
 	body.setFixedRotation(true);
 
@@ -115,7 +115,7 @@ public abstract class Kaiak extends AnimatedSprite {
 		if (getCurrentTileIndex() != sStatus) {
 		    sStatus = getCurrentTileIndex();
 		    if (sStatus == -2 || sStatus == -2 || sStatus == 5) {
-			// :TODO
+			// :TODO make sounв when status like ...
 			ResourcesManager.getInstance().playSoundFromStack("footstep");
 		    }
 		}
@@ -209,8 +209,6 @@ public abstract class Kaiak extends AnimatedSprite {
 	plState = 5;
     }
 
-    public void setRunning() {
-    }
 
     public void powFunctionRun() {
 	if (isFinish || plState == 2 || plState == 3 || speed > maxSpeed) {
@@ -385,12 +383,7 @@ public abstract class Kaiak extends AnimatedSprite {
 
 	plState = 0;
 	isFinish = false;
-	footContacts = 1;
 	speed = 0;
-	speedBeforJump = 0;
-	frameDuration = 0l;
-	maxSpeed = 10000;
-	longJumpDeg = 90;
 
     }
 

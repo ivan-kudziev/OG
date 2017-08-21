@@ -22,11 +22,6 @@ import java.net.URL;
 import java.util.List;
 
 import by.kipind.game.olympicgames.GameSettings;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 
 public class JSONParser {
@@ -74,18 +69,7 @@ public class JSONParser {
 					HttpEntity httpEntity = httpResponse.getEntity();
 					is = httpEntity.getContent();
 				}
-				if (method == "OK_POST") {
-					OkHttpClient httpClient = new OkHttpClient();
 
-					RequestBody formBody = new FormBody.Builder()
-							.add("message", "Your message")
-							.build();
-					Request request = new Request.Builder()
-							.url("http://www.foo.bar/index.php")
-							.post(formBody)
-							.build();
-					Response response = httpClient.newCall(request).execute();
-				}
 
 			} catch (Exception e) {
 				// return null;

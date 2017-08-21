@@ -3,7 +3,7 @@
 
 
 
- 
+ <entity x="390" y="390" type="player"/>
  <entity x="0" y="0" type="svetofor"/>
  
     

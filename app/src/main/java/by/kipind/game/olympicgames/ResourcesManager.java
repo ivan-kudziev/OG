@@ -146,6 +146,7 @@ public class ResourcesManager {
             case GameSettings.ACTIVITY_ID_SHOOTING:
                 gameGraf = new ShootingGraf(activity).getTextureRegionMap();
                 loadRun100Audio();
+                break;
             case GameSettings.ACTIVITY_ID_RAFTING:
                 gameGraf = new RaftingGraf(activity).getTextureRegionMap();
                 loadRun100Audio();
