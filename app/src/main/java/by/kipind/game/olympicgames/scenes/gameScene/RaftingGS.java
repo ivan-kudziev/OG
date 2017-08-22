@@ -146,9 +146,11 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	private void createBackground() {
 
-		final List<Sprite> greenFon=new ArrayList<>();
-		for (int i = 1; i <= 7; i=i+2) {
-			greenFon.add(new Sprite(this.lvlWidth / 2f, (this.lvlTotalHeight-this.lvlHeight)+i * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
+		final List<Sprite> greenFon = new ArrayList<>();
+		final List<Sprite> water = new ArrayList<>();
+
+		for (int i = 1; i <= 7; i = i + 2) {
+			greenFon.add(new Sprite(this.lvlWidth / 2f, (this.lvlTotalHeight - this.lvlHeight) + i * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
 		}
 		for (Sprite sp : greenFon) {
 			attachChild(sp);
@@ -160,38 +162,63 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 */
 		berega = new ArrayList<>();
 		float deltaX = this.lvlHeight, deltaY = this.lvlWidth / 2f;
-		Random random = new Random(GameSettings.WEEK_OF_YEAR);
+		final Random random = new Random(GameSettings.WEEK_OF_YEAR);
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; deltaX >= 0; i++) {
 			deltaX = deltaX - 37f;
 			deltaY = (float) (deltaY + 15 + (-30 * random.nextInt(2) - 1)); //(20f * (Math.random()+ - 10f));
+			water.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
+			attachChild(water.get(i));
 
-			attachChild(new Sprite(deltaY, deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
-			berega.add(new Sprite(deltaY - 150, deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
-			berega.add(new Sprite(deltaY + 150, deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
+			berega.add(new Sprite(deltaY - water.get(0).getWidth()/2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
+			berega.add(new Sprite(deltaY + water.get(0).getWidth()/2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
 
 		}
 		for (Sprite sp : berega) {
 			attachChild(sp);
 		}
 
-		attachChild(new Sprite(135, 0, resourcesManager.gameGraf.get("game_panel_region"), vbom));
+		/*attachChild(new Sprite(135, 0, resourcesManager.gameGraf.get("game_panel_region"), vbom));
 		attachChild(new Sprite(405, 0, resourcesManager.gameGraf.get("game_panel_region"), vbom));
 		attachChild(new Sprite(675, 0, resourcesManager.gameGraf.get("game_panel_region"), vbom));
-
+*/
 		attachChild(new Sprite(this.lvlWidth / 4, this.lvlHeight / 2f, resourcesManager.gameGraf.get("shoot_tree"), vbom));
 		attachChild(new Sprite(3 * this.lvlWidth / 4, this.lvlHeight / 2, resourcesManager.gameGraf.get("shoot_tree"), vbom));
 
 		this.registerUpdateHandler(new TimerHandler(1 / 60f, true, new ITimerCallback() {
+			Sprite spW;
 			@Override
 			public void onTimePassed(final TimerHandler pTimerHandler) {
 
 				for (Sprite sp : greenFon) {
-					if(sp.getSceneCenterCoordinates()[1]-sp.getHeight()/2>camera.getCenterY()+lvlHeight/2){
-						sp.setY(camera.getCenterY()-lvlHeight/2-sp.getHeight()/2);
+					if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2) {
+						sp.setY(camera.getCenterY() - lvlHeight / 2 - sp.getHeight() / 2 + 3);
+						break;
 					}
 				}
 
+				for (int i = 0; i < water.size(); i++) {
+					 spW = water.get(i);
+					if (spW.getSceneCenterCoordinates()[1] - spW.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2) {
+						spW.setY(water.get((i==water.size()-1?0:i+1)).getY()-spW.getHeight());
+						spW.setX((float) (water.get((i==water.size()-1?0:i+1)).getX() + 15 + (-30 * random.nextInt(2) - 1)));
+						berega.get(2*i).setY(spW.getY());
+						berega.get(2*i+1).setY(spW.getY());
+						berega.get(2*i).setX(spW.getX()-spW.getWidth()/2);
+						berega.get(2*i+1).setX(spW.getX()+spW.getWidth()/2);
+						break;
+					}
+				}
+
+				/*for (Sprite sp : water) {
+					if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2) {
+						sp.setY(camera.getCenterY() - lvlHeight / 2 - sp.getHeight() / 2 + 5);
+						sp.setX((float) (sp.getX() + 15 + (-30 * random.nextInt(2) - 1)));
+
+						break;
+					}
+				}
+*/
 			}
 		}));
 	}
