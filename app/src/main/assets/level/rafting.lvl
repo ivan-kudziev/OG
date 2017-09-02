@@ -5,6 +5,8 @@
 
  <entity x="390" y="1400" type="player"/>
  <entity x="0" y="0" type="svetofor"/>
- 
+<entity x="430" y="1400" type="beregR"/>
+<entity x="350" y="1400" type="beregL"/>
+
     
 </level>
