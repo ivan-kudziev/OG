@@ -49,6 +49,7 @@ import by.kipind.game.olympicgames.sceneElements.ChatWin;
 import by.kipind.game.olympicgames.sceneElements.ShortRecordsTable;
 import by.kipind.game.olympicgames.scenes.BaseScene;
 import by.kipind.game.olympicgames.sprite.Kaiak;
+import by.kipind.game.olympicgames.sprite.Sensor;
 import by.kipind.game.olympicgames.sprite.Svetofor;
 import by.kipind.game.olympicgames.sprite.buttons.AnimBtn;
 import by.kipind.game.olympicgames.sprite.buttons.BtnGoLeft;
@@ -70,14 +71,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	private static int STEPS_PER_SECOND = 60;
 
 
-	/* private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_UFO_L = "ufo_l";
-	 private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_UFO_L_SH = "ufo_l_sh";
-	 private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_UFO_R = "ufo_r";
-	 private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_UFO_R_SH = "ufo_r_sh";
-	private static final Object TAG_GAME_ELEMENT_FROM_FILE_SHOOT_AREA_L = "area_l";
-	 private static final Object TAG_GAME_ELEMENT_FROM_FILE_SHOOT_AREA_R = "area_r";
-	 private static final Object TAG_GAME_ELEMENT_FROM_FILE_SHOOT_RED_AREA_L = "areaR_l";
-	 private static final Object TAG_GAME_ELEMENT_FROM_FILE_SHOOT_RED_AREA_R = "areaR_r";*/
+
 	// ----------
 	private final int lvlWidth = 800;
 	private final int lvlHeight = 450;
@@ -107,6 +101,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 
 	private List<Sprite> berega;
+	private List<Sensor> sensors;
 	private List<Body> beregBody;
 
 	private List<Sprite> greenFon;
@@ -164,7 +159,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	}
 
 	private void createBackground() {
-		final FixtureDef FIXTURE_DEF = PhysicsFactory.createFixtureDef(0, 0.01f, 0.5f);
+		//final FixtureDef FIXTURE_DEF = PhysicsFactory.createFixtureDef(0, 0.01f, 0.5f);
 
 		greenFon = new ArrayList<>();
 		water = new ArrayList<>();
@@ -176,21 +171,24 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			attachChild(sp);
 		}
 
-	/*	attachChild(new Sprite(this.lvlWidth / 2f, (this.lvlTotalHeight - this.lvlHeight) + 1 * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
-		attachChild(new Sprite(this.lvlWidth / 2f, 3 * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
-		attachChild(new Sprite(this.lvlWidth / 2f, 1 * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
-*/
+
 		berega = new ArrayList<>();
 		beregBody = new ArrayList<>();
+		sensors = new ArrayList<>();
 
 		float deltaX = this.lvlHeight, deltaY = this.lvlWidth / 2f;
 
-
+int rand;
 		for (int i = 0; deltaX >= 0; i++) {
 			deltaX = deltaX - 37f;
-			deltaY = (float) (deltaY + 15 + (-30 * random.nextInt(2) - 1)); //(20f * (Math.random()+ - 10f));
+			rand=random.nextInt(2);
+			deltaY = (float) (deltaY + 15 + (-30 * rand - 1)); //(20f * (Math.random()+ - 10f));
 			water.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
 			attachChild(water.get(i));
+
+			if(i%3==0){
+				sensors.add(new Sensor(deltaY,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i)));
+			}
 
 			berega.add(new Sprite(deltaY - water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
 			berega.add(new Sprite(deltaY + water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
@@ -199,12 +197,10 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		for (Sprite sp : berega) {
 			attachChild(sp);
 		}
+		for (Sensor sr : sensors) {
+			attachChild(sr);
+		}
 
-
-		/*attachChild(new Sprite(135, 0, resourcesManager.gameGraf.get("game_panel_region"), vbom));
-		attachChild(new Sprite(405, 0, resourcesManager.gameGraf.get("game_panel_region"), vbom));
-		attachChild(new Sprite(675, 0, resourcesManager.gameGraf.get("game_panel_region"), vbom));
-*/
 		attachChild(new Sprite(this.lvlWidth / 4, this.lvlHeight / 2f, resourcesManager.gameGraf.get("shoot_tree"), vbom));
 		attachChild(new Sprite(3 * this.lvlWidth / 4, this.lvlHeight / 2, resourcesManager.gameGraf.get("shoot_tree"), vbom));
 
@@ -217,9 +213,8 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 				for (Sprite sp : greenFon) {
 
-					if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2) {
-						sp.setY(camera.getCenterY() - lvlHeight / 2 - sp.getHeight() / 2 + 3);
-						//sp.setX(sp.getX()-100);
+					if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2 && camera.getCenterY()>lvlHeight/2) {
+						sp.setY(camera.getCenterY() - lvlHeight / 2 - sp.getHeight() / 2 );
 						break;
 					}
 				}
@@ -409,7 +404,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 				scoreText.setText(String.valueOf(bout.body.getLinearVelocity().y));
 
 				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed() || bout.getContacts() == 1) {
-					bout.body.setLinearVelocity(0, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
+					bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
 				}
 				/*if (bout.getContacts()==1) {
 					bout.body.setLinearVelocity(0,  bout.body.getLinearVelocity().y/2);
