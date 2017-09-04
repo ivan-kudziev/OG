@@ -25,7 +25,6 @@ import by.kipind.game.olympicgames.sceneElements.PersonalRecordTable;
 import by.kipind.game.olympicgames.sceneElements.RatePanel;
 import by.kipind.game.olympicgames.scenes.BaseScene;
 import by.kipind.game.olympicgames.sprite.buttons.menubtn.AnimMenuItem;
-import by.kipind.game.reklama.BtnAdStat;
 
 public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener, IOnSceneTouchListener {
 
@@ -40,7 +39,6 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
 
     private int testTimer = 0, v = 1;
 
-    private List<BtnAdStat> adBtnList;
 
     @Override
     public void createScene() {
@@ -92,14 +90,7 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
             hudAreaBlackAlpha.setScale(0.85f, 1.2f);
             hudAreaBlackAlpha.setPosition((SCENE_WIDTH + hudAreaBlackAlpha.getWidth() * 0.85f) / 2, (SCENE_HEIGHT) / 2f + hudAreaBlackAlpha.getHeight() * 0.3f);
 
-            adBtnList = new ArrayList<BtnAdStat>();
-            int[] adAr = new int[7];
-            adAr = GameSettings.getBlockByAd();
-            for (int i = 0; i < adAr.length; i++) {
-                if (adAr[i] == 1) {
-                    adBtnList.add(new BtnAdStat(i, 330, 330, (ITiledTextureRegion) ResourcesManager.getInstance().ad_status, vbom));
-                }
-            }
+
 
             // --------------
 
@@ -107,18 +98,7 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
                     hudAreaBlackAlpha.getY(),
                     hudAreaBlackAlpha.getWidth() * 0.85f,
                     hudAreaBlackAlpha.getHeight(), camera, vbom);
-            // TODO:REM
-        /* rt.registerUpdateHandler(new TimerHandler(1f, true, new ITimerCallback() {
-	     * 
-	     * @Override public void onTimePassed(final TimerHandler pTimerHandler) { testTimer++; if (testTimer > 10 && v == 1) { SceneManager.getInstance().loadGameScene(engine, 1); v = -1; } } })); */
 
-            // if (adBtnList != null) {
-            for (BtnAdStat iter : adBtnList) {
-                gameHUD.registerTouchArea(iter);
-                gameHUD.attachChild(iter);
-
-            }
-            // }
 
             gameHUD.registerTouchArea(hudAreaBlackAlpha);
 
@@ -153,14 +133,14 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
             rateMailArea.setPosition(mRatePanel.getX() - mRatePanel.getWidth() / 4, mRatePanel.getY());
             rateGPArea.setPosition(mRatePanel.getX() + mRatePanel.getWidth() / 4, mRatePanel.getY());
 
-            gameHUD.registerTouchArea(rateMailArea);
+          /*  gameHUD.registerTouchArea(rateMailArea);
             gameHUD.registerTouchArea(rateGPArea);
             gameHUD.attachChild(rateGPArea);
             gameHUD.attachChild(rateMailArea);
             if (GameSettings.GOOGLE_PLAY_VISIT > 0) {// GameSettings.GOOGLE_PLAY_VISIT > 0 show rate link
                 mRatePanel.changeToInviteMail();
             }
-            gameHUD.attachChild(mRatePanel);
+            gameHUD.attachChild(mRatePanel);*/
 
         }
 
@@ -227,7 +207,7 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
         menuChildScene.addMenuItem(menuItemShooting);// 6
         menuChildScene.addMenuItem(menuItemExit);// 7
         menuChildScene.addMenuItem(menuItemLeaders);// 8
-        menuChildScene.addMenuItem(menuItemRafting);// 9
+       // menuChildScene.addMenuItem(menuItemRafting);// 9
 
         for (IMenuItem itm : menuChildScene.getMenuItems()) {
             itm.setScale(0.8f);
@@ -286,11 +266,7 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
     }
 
     private void upateAdBtnPos() {
-        for (BtnAdStat iter : adBtnList) {
-            iter.setPosition(SCENE_WIDTH / 2 + menuChildScene.getMenuItem(iter.gameId).getX(), SCENE_HEIGHT / 2 + menuChildScene.getMenuItem(iter.gameId).getY() - iter.getHeight()
-                    * 0.2f);
 
-        }
     }
 
     @Override

@@ -7,9 +7,6 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
 import org.andengine.engine.Engine;
 import org.andengine.engine.LimitedFPSEngine;
 import org.andengine.engine.camera.BoundCamera;
@@ -25,16 +22,13 @@ import org.andengine.ui.activity.BaseGameActivity;
 
 import java.io.IOException;
 
-import by.kipind.game.olympicgames.GameSettings;
 import by.kipind.game.olympicgames.ResourcesManager;
 import by.kipind.game.olympicgames.SceneManager;
-import by.kipind.game.reklama.AdModule;
 
 public class GameActivity extends BaseGameActivity {
     protected static Integer SCENE_WIDTH = 800;
     protected static Integer SCENE_HEIGHT = 450;
     // private static TimeZone timeZone = TimeZone.getTimeZone("UTC");
-    AdView adView;
 
     private BoundCamera camera;
 
@@ -50,28 +44,13 @@ public class GameActivity extends BaseGameActivity {
     @Override
     protected void onSetContentView() {
 
-
-	// ads set
-	if (adView != null) {
-	    return;
-	}
-
-
-
 	final FrameLayout frameLayout = new FrameLayout(this);
 	final FrameLayout.LayoutParams frameLayoutLayoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
 
 	final FrameLayout.LayoutParams adViewLayoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT,
 		Gravity.RIGHT | Gravity.TOP);
 
-	adView = new AdView(this);
-	adView.setAdSize(com.google.android.gms.ads.AdSize.SMART_BANNER);
-	adView.setAdUnitId("ca-app-pub-3924626110211690/7913659768");
-	// adView.setAdListener(null);
-	adView.setBackgroundColor(android.graphics.Color.TRANSPARENT);
-	AdRequest adrequest = new AdRequest.Builder().build();
-	adView.loadAd(adrequest);// only if u test the ads
-	// adView.loadAd(new AdRequest.Builder().build()); When u dont test the ads on ur device
+
 	this.mRenderSurfaceView = new RenderSurfaceView(this);
 	mRenderSurfaceView.setRenderer(mEngine, this);
 
@@ -80,7 +59,6 @@ public class GameActivity extends BaseGameActivity {
 	surfaceViewLayoutParams.gravity = Gravity.CENTER;
 
 	frameLayout.addView(this.mRenderSurfaceView, surfaceViewLayoutParams);
-	frameLayout.addView(adView, adViewLayoutParams);
 
 	this.setContentView(frameLayout, frameLayoutLayoutParams);
 	mEngine.registerUpdateHandler(new TimerHandler(0.5f, new ITimerCallback() {
@@ -92,16 +70,7 @@ public class GameActivity extends BaseGameActivity {
     }
 
     private void ads() {
-	this.runOnUiThread(new Runnable() {
-	    @Override
-	    public void run() {
-		if (GameSettings.TAG_AD_BUNNER_SHOW) {
-		    adView.setVisibility(AdView.VISIBLE);
-		} else {
-		    adView.setVisibility(AdView.INVISIBLE);
-		}
-	    }
-	});
+
     }
 
     @Override
@@ -187,16 +156,7 @@ public class GameActivity extends BaseGameActivity {
 
 	}
 	if (requestCode == 2) {
-	    switch (data.getExtras().getInt("adShowRes")) {
-	    case -777:
-		AdModule.getInstance().AdShown();
 
-		break;
-
-	    default:
-		AdModule.getInstance().AdFail();
-		break;
-	    }
 
 	}
     }

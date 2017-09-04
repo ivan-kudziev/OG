@@ -43,9 +43,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:palette-v7:25.4.0'
 
-    compile 'com.google.android.gms:play-services-ads:11.0.1'
-
-
     compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 
   //  compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
