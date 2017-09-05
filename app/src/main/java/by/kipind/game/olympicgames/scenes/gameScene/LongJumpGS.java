@@ -1,6 +1,16 @@
 package by.kipind.game.olympicgames.scenes.gameScene;
 
-import java.io.IOException;
+import android.view.MotionEvent;
+
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.ContactImpulse;
+import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.Manifold;
 
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.timer.ITimerCallback;
@@ -25,7 +35,8 @@ import org.andengine.util.level.simple.SimpleLevelEntityLoaderData;
 import org.andengine.util.level.simple.SimpleLevelLoader;
 import org.xml.sax.Attributes;
 
-import android.view.MotionEvent;
+import java.io.IOException;
+
 import by.kipind.game.olympicgames.GameSettings;
 import by.kipind.game.olympicgames.R;
 import by.kipind.game.olympicgames.ResourcesManager;
@@ -40,16 +51,6 @@ import by.kipind.game.olympicgames.sprite.buttons.AnimBtn;
 import by.kipind.game.olympicgames.sprite.buttons.BtnLongJump;
 import by.kipind.game.olympicgames.sprite.buttons.BtnRun;
 import by.kipind.game.utils.FallowWebLink;
-
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
-import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.ContactImpulse;
-import com.badlogic.gdx.physics.box2d.ContactListener;
-import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.Manifold;
 
 public class LongJumpGS extends BaseScene implements IOnSceneTouchListener {
     private static final String GAME_TYPE = "LONG_JUMP";
@@ -165,7 +166,7 @@ public class LongJumpGS extends BaseScene implements IOnSceneTouchListener {
 	attachChild(new Sprite(2335, this.lvlHeight / 2.7f, resourcesManager.gameGraf.get("game_background1_region"), vbom));
 	attachChild(new Sprite(2892, this.lvlHeight / 2.7f, resourcesManager.gameGraf.get("game_background1_region"), vbom));
 
-	hudAdClock = new Sprite(350, 310, resourcesManager.gameGraf.get("clock_small"), vbom) {
+	/*hudAdClock = new Sprite(350, 310, resourcesManager.gameGraf.get("clock_small"), vbom) {
 	    @Override
 	    public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, final float pTouchAreaLocalY) {
 		super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
@@ -207,7 +208,7 @@ public class LongJumpGS extends BaseScene implements IOnSceneTouchListener {
 
 	attachChild(hudAdHost);
 	attachChild(hudAdBras);
-	attachChild(hudAdClock);
+	attachChild(hudAdClock);*/
 
     }
 
