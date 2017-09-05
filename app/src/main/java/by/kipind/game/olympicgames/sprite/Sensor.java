@@ -24,16 +24,15 @@ public class Sensor extends AnimatedSprite {
 	// VARIABLES
 	// ---------------------------------------------
 	public Body body;
-	public int frameDuration = 100;
 	private int status = 0; // 0- ; -1 -
 
 	// ---------------------------------------------
 	// CONSTRUCTOR
 	// ---------------------------------------------
 
-	public Sensor(float pX, float pY, VertexBufferObjectManager vbo,  PhysicsWorld physicsWorld, String identifier) {
-		super(pX, pY, (ITiledTextureRegion) ResourcesManager.getInstance().gameGraf.get("kaiak_sensor"), vbo);
-		createPhysics( physicsWorld, identifier);
+	public Sensor(float pX, float pY, VertexBufferObjectManager vbo,  PhysicsWorld physicsWorld, String userData,String graficName) {
+		super(pX, pY, (ITiledTextureRegion) ResourcesManager.getInstance().gameGraf.get(graficName), vbo);
+		createPhysics( physicsWorld, userData);
 
 	}
 
@@ -42,7 +41,7 @@ public class Sensor extends AnimatedSprite {
 	// ---------------------------------------------
 
 	private void createPhysics( PhysicsWorld physicsWorld, String identifier) {
-		body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyDef.BodyType.StaticBody, PhysicsFactory.createFixtureDef(0, 0, 0));
+		body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyDef.BodyType.StaticBody, PhysicsFactory.createFixtureDef(0, 0, 0,true));
 		body.setUserData(identifier);
 		physicsWorld.registerPhysicsConnector(new PhysicsConnector(this, body, false, false));
 	}
@@ -58,7 +57,6 @@ public class Sensor extends AnimatedSprite {
 
 	public void reSet() {
 		this.status = 0;
-		this.frameDuration = 100;
 		this.body.setActive(false);
 
 	}

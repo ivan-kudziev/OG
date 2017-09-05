@@ -187,7 +187,9 @@ int rand;
 			attachChild(water.get(i));
 
 			if(i%3==0){
-				sensors.add(new Sensor(deltaY,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i)));
+				sensors.add(new Sensor(deltaY-20,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
+				sensors.add(new Sensor(deltaY+20,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
+				sensors.add(new Sensor(deltaY,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));
 			}
 
 			berega.add(new Sprite(deltaY - water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
@@ -552,7 +554,9 @@ int rand;
 	}
 
 	private ContactListener contactListener() {
+
 		ContactListener contactListener = new ContactListener() {
+			int i;
 			public void beginContact(Contact contact) {
 				final Fixture x1 = contact.getFixtureA();
 				final Fixture x2 = contact.getFixtureB();
@@ -560,9 +564,16 @@ int rand;
 				if (x1.getBody().getUserData() != null && x2.getBody().getUserData() != null) {
 					if ((x1.getBody().getUserData().equals("bout") || x2.getBody().getUserData().equals("bout")) && (x1.getBody().getUserData().equals("beregR") || x2.getBody().getUserData().equals("beregR"))) {
 						bout.setContacts(1);
-					}
+					}else
 					if ((x1.getBody().getUserData().equals("bout") || x2.getBody().getUserData().equals("bout")) && (x1.getBody().getUserData().equals("beregL") || x2.getBody().getUserData().equals("beregL"))) {
 						bout.setContacts(1);
+					}else {
+						for (i = 0; i < sensors.size(); i += 1) {
+							if (x1.getBody().getUserData().equals("sens" + String.valueOf(i)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i))) {
+								sensors.get(i).setStatus(1);
+
+							}
+						}
 					}
 
 				}
@@ -574,9 +585,16 @@ int rand;
 				if (x1.getBody().getUserData() != null && x2.getBody().getUserData() != null) {
 					if ((x1.getBody().getUserData().equals("bout") || x2.getBody().getUserData().equals("bout")) && (x1.getBody().getUserData().equals("beregR") || x2.getBody().getUserData().equals("beregR"))) {
 						bout.setContacts(0);
-					}
+					}else
 					if ((x1.getBody().getUserData().equals("bout") || x2.getBody().getUserData().equals("bout")) && (x1.getBody().getUserData().equals("beregL") || x2.getBody().getUserData().equals("beregL"))) {
 						bout.setContacts(0);
+					}else{
+						for (i = 0; i < sensors.size(); i += 1) {
+							if (x1.getBody().getUserData().equals("sens" + String.valueOf(i)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i))) {
+								sensors.get(i).setStatus(0);
+
+							}
+						}
 					}
 
 				}

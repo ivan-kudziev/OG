@@ -41,7 +41,9 @@ public class RaftingGraf extends BaseResConteiner {
 
         // --Tiled
         textureRegionRes.put("player_region", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(gameTextureAtlas, activity, "sprites/atlas_kaiak.png", 5, 1));
-        textureRegionRes.put("kaiak_sensor", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(gameTextureAtlas, activity, "game/rafting/gate.png",1,1));
+        textureRegionRes.put("kaiak_sensor_gate", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(gameTextureAtlas, activity, "game/rafting/gate.png",1,1));
+        textureRegionRes.put("kaiak_sensor_boat", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(gameTextureAtlas, activity, "game/rafting/boat_sensor.png",1,1));
+        textureRegionRes.put("kaiak_sensor_gate2", BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(gameTextureAtlas, activity, "game/rafting/gate2_sensor.png",1,1));
 
         try {
             this.gameTextureAtlas.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 1, 0));
