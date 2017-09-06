@@ -39,9 +39,9 @@ dependencies {
     compile project(':andEngine')
     compile project(':andEnginePhysicsBox2DExtension')
 
-    compile 'com.android.support:support-compat:25.3.1'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:palette-v7:25.4.0'
+   // compile 'com.android.support:support-compat:25.3.1'
+   // compile 'com.android.support:appcompat-v7:25.3.1'
+   // compile 'com.android.support:palette-v7:25.4.0'
 
     compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 
