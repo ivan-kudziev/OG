@@ -321,8 +321,8 @@ public class PlayerInfoActivity extends SimpleLayoutGameActivity implements Text
 
         gameHUD.attachChild(hudNickFormBG);
         gameHUD.attachChild(PanelLbNameEnter);
-        gameHUD.attachChild(PanelLbExDate);
-        gameHUD.attachChild(PanelLbIDNum);
+      //  gameHUD.attachChild(PanelLbExDate);
+      //  gameHUD.attachChild(PanelLbIDNum);
         gameHUD.attachChild(edTxt);
         gameHUD.attachChild(exitBtn);
         gameHUD.attachChild(musicBtn);
