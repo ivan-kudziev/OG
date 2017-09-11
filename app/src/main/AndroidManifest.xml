@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
     package="by.kipind.game.olympicgames"
-    android:versionCode="15"
+    android:versionCode="16"
     android:versionName="6.007">
 
     <uses-sdk android:minSdkVersion="14" />
@@ -12,9 +12,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- Optional -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
         android:name="by.kipind.game.olympicgames.GameSettings"

@@ -282,7 +282,7 @@ public class LeaderBoardActivity extends Activity implements OnClickListener, On
 				lv_mlb.setAdapter(new CastomItemListAdapter(LeaderBoardActivity.this, recordsList));
 
 			} else {
-				Toast.makeText(LeaderBoardActivity.this, (CharSequence) getString(R.string.connection_fail), Toast.LENGTH_SHORT).show();
+				Toast.makeText(LeaderBoardActivity.this, (CharSequence) getString(R.string.connection_fail), Toast.LENGTH_LONG).show();
 
 			}
 		}

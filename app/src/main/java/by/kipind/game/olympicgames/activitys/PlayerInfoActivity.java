@@ -1,8 +1,6 @@
 package by.kipind.game.olympicgames.activitys;
 
 
-import by.kipind.game.olympicgames.R;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -46,8 +44,10 @@ import java.util.List;
 import by.kipind.game.line.CRUDObject;
 import by.kipind.game.line.JSONParser;
 import by.kipind.game.olympicgames.GameSettings;
-
+import by.kipind.game.olympicgames.R;
 import by.kipind.game.olympicgames.ResourcesManager;
+
+import static by.kipind.game.olympicgames.GameSettings.setMusicSound;
 
 /**
  * (c) 2010 Nicolas Gramlich (c) 2011 Zynga
@@ -350,7 +350,8 @@ public class PlayerInfoActivity extends SimpleLayoutGameActivity implements Text
             onBack();
         } else if (touchedObj.equals(musicBtn)) {
             musicBtn.setCurrentTileIndex(musicBtn.getCurrentTileIndex() ^ 1);
-            GameSettings.MUSIC_VAL = GameSettings.MUSIC_VAL ^ 1;
+           // GameSettings.MUSIC_VAL = GameSettings.MUSIC_VAL ^ 1;
+            setMusicSound(GameSettings.MUSIC_VAL ^ 1,GameSettings.SOUND_VAL);
             if (GameSettings.MUSIC_VAL == 0) {
                 ResourcesManager.getInstance().musicPause(1);
             } else {
@@ -362,8 +363,8 @@ public class PlayerInfoActivity extends SimpleLayoutGameActivity implements Text
             } else {
                 soundBtn.setCurrentTileIndex(2);
             }
-            GameSettings.SOUND_VAL = GameSettings.SOUND_VAL ^ 1;
-
+            //GameSettings.SOUND_VAL = GameSettings.SOUND_VAL ^ 1;
+            setMusicSound(GameSettings.MUSIC_VAL ,GameSettings.SOUND_VAL^ 1);
         } else if (touchedObj.equals(hudNickFormBG)) {
             mEditText.requestFocus();
             showKeyBoard();
