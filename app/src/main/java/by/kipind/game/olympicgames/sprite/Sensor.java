@@ -24,14 +24,17 @@ public class Sensor extends AnimatedSprite {
 	// VARIABLES
 	// ---------------------------------------------
 	public Body body;
-	private int status = 0; // 0- ; -1 -
+	private int status = 0; // 0-netral ; 1 - got contact ; -1 - lost contact
 
 	// ---------------------------------------------
 	// CONSTRUCTOR
 	// ---------------------------------------------
 
-	public Sensor(float pX, float pY, VertexBufferObjectManager vbo,  PhysicsWorld physicsWorld, String userData,String graficName) {
+	public Sensor(float pX, float pY, float pWMlt,float pHMlp, VertexBufferObjectManager vbo,  PhysicsWorld physicsWorld, String userData,String graficName) {
 		super(pX, pY, (ITiledTextureRegion) ResourcesManager.getInstance().gameGraf.get(graficName), vbo);
+		this.setWidth(this.getWidth() * pWMlt);
+		this.setHeight(this.getHeight() * pHMlp);
+
 		createPhysics( physicsWorld, userData);
 
 	}

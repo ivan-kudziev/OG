@@ -187,9 +187,9 @@ int rand;
 			attachChild(water.get(i));
 
 			if(i%3==0){
-				sensors.add(new Sensor(deltaY-20,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
-				sensors.add(new Sensor(deltaY+20,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
-				sensors.add(new Sensor(deltaY,1450 - deltaX,vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));
+				sensors.add(new Sensor(deltaY-water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
+				sensors.add(new Sensor(deltaY+water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
+				sensors.add(new Sensor(deltaY,1450 - deltaX,1,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));
 			}
 
 			berega.add(new Sprite(deltaY - water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
@@ -229,6 +229,15 @@ int rand;
 					if (spW.getSceneCenterCoordinates()[1] - spW.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2) {
 						spW.setY(water.get((i == water.size() - 1 ? 0 : i + 1)).getY() - spW.getHeight());
 						spW.setX((float) (water.get((i == water.size() - 1 ? 0 : i + 1)).getX() + 15 + (-30 * random.nextInt(2) - 1)));
+
+						if(i%3==0){
+							sensors.get(i).setPosition(spW.getX()-spW.getWidth()/4,1450 - spW.getY());
+							sensors.get(i+1).setPosition(spW.getX()+spW.getWidth()/4,1450 - spW.getY());
+							sensors.get(i+2).setPosition(spW.getX(),1450 - spW.getY());
+							/*sensors.add(new Sensor(deltaY-water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
+							sensors.add(new Sensor(deltaY+water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
+							sensors.add(new Sensor(deltaY,1450 - deltaX,1,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));*/
+						}
 
 						berega.get(2 * i).setPosition(spW.getX() - wsWidthHalf, spW.getY());
 						berega.get(2 * i + 1).setPosition(spW.getX() + wsWidthHalf, spW.getY());
@@ -388,6 +397,7 @@ int rand;
 
 
 		gameHUD.registerUpdateHandler(new TimerHandler(1 / 60f, true, new ITimerCallback() {
+			String msg= "";
 			@Override
 			public void onTimePassed(final TimerHandler pTimerHandler) {
 
@@ -400,10 +410,17 @@ int rand;
 					bout.body.setLinearVelocity(0, 0);
 				}
 */
+				msg="";
+				for (Sensor s : sensors) {
+				//	msg+=String.valueOf(s.getStatus())+"|";
 
-
+				}
+				msg+=String.valueOf(sensors.get(0).getStatus())+"|";
+				msg+=String.valueOf(sensors.get(1).getStatus())+"|";
+				msg+=String.valueOf(sensors.get(2).getStatus())+"|";
+				msg+=String.valueOf(sensors.get(3).getStatus())+"|";
 				//scoreText.setText(String.valueOf(bout.body.getLocalPoint(new Vector2(bout.getX(),bout.getY())).y)+"<>"+String.valueOf(bout.getY()));
-				scoreText.setText(String.valueOf(bout.body.getLinearVelocity().y));
+				scoreText.setText(msg);
 
 				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed() || bout.getContacts() == 1) {
 					bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
@@ -591,7 +608,7 @@ int rand;
 					}else{
 						for (i = 0; i < sensors.size(); i += 1) {
 							if (x1.getBody().getUserData().equals("sens" + String.valueOf(i)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i))) {
-								sensors.get(i).setStatus(0);
+								sensors.get(i).setStatus(-1);
 
 							}
 						}
