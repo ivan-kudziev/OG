@@ -160,6 +160,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	private void createBackground() {
 		//final FixtureDef FIXTURE_DEF = PhysicsFactory.createFixtureDef(0, 0.01f, 0.5f);
+		List<Sprite> vorota = new ArrayList<>();
 
 		greenFon = new ArrayList<>();
 		water = new ArrayList<>();
@@ -176,6 +177,8 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		beregBody = new ArrayList<>();
 		sensors = new ArrayList<>();
 
+
+
 		float deltaX = this.lvlHeight, deltaY = this.lvlWidth / 2f;
 
 int rand;
@@ -187,6 +190,8 @@ int rand;
 			attachChild(water.get(i));
 
 			if(i%3==0){
+				vorota.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
+
 				sensors.add(new Sensor(deltaY-water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
 				sensors.add(new Sensor(deltaY+water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
 				sensors.add(new Sensor(deltaY,1450 - deltaX,1,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));
@@ -230,14 +235,14 @@ int rand;
 						spW.setY(water.get((i == water.size() - 1 ? 0 : i + 1)).getY() - spW.getHeight());
 						spW.setX((float) (water.get((i == water.size() - 1 ? 0 : i + 1)).getX() + 15 + (-30 * random.nextInt(2) - 1)));
 
-						if(i%3==0){
+						/*if(i%3==0){
 							sensors.get(i).setPosition(spW.getX()-spW.getWidth()/4,1450 - spW.getY());
 							sensors.get(i+1).setPosition(spW.getX()+spW.getWidth()/4,1450 - spW.getY());
 							sensors.get(i+2).setPosition(spW.getX(),1450 - spW.getY());
-							/*sensors.add(new Sensor(deltaY-water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
+							*//*sensors.add(new Sensor(deltaY-water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
 							sensors.add(new Sensor(deltaY+water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
-							sensors.add(new Sensor(deltaY,1450 - deltaX,1,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));*/
-						}
+							sensors.add(new Sensor(deltaY,1450 - deltaX,1,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));*//*
+						}*/
 
 						berega.get(2 * i).setPosition(spW.getX() - wsWidthHalf, spW.getY());
 						berega.get(2 * i + 1).setPosition(spW.getX() + wsWidthHalf, spW.getY());
