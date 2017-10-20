@@ -37,7 +37,8 @@ public class RaftingGraf extends BaseResConteiner {
         textureRegionRes.put("kaiak_pesok", BitmapTextureAtlasTextureRegionFactory.createFromAsset(gameTextureAtlas, activity, "game/rafting/pesok.png"));
         textureRegionRes.put("kaiak_green_fon", BitmapTextureAtlasTextureRegionFactory.createFromAsset(gameTextureAtlas, activity, "game/rafting/raf_fon_green.png"));
         textureRegionRes.put("kaiak_woda", BitmapTextureAtlasTextureRegionFactory.createFromAsset(gameTextureAtlas, activity, "game/rafting/woda.png"));
-        textureRegionRes.put("kaiak_vorota", BitmapTextureAtlasTextureRegionFactory.createFromAsset(gameTextureAtlas, activity, "game/rafting/vorota.png"));
+
+       // textureRegionRes.put("kaiak_vorota", BitmapTextureAtlasTextureRegionFactory.createFromAsset(gameTextureAtlas, activity, "game/rafting/vorota.png"));
 
 
         // --Tiled

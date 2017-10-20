@@ -2,6 +2,9 @@ package by.kipind.game.olympicgames.activitys;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.multidex.MultiDex;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -9,6 +12,9 @@ import android.widget.FrameLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.games.Games;
 
 import org.andengine.engine.Engine;
 import org.andengine.engine.LimitedFPSEngine;
@@ -30,15 +36,16 @@ import by.kipind.game.olympicgames.ResourcesManager;
 import by.kipind.game.olympicgames.SceneManager;
 import by.kipind.game.reklama.AdModule;
 
-public class GameActivity extends BaseGameActivity {
+public class GameActivity extends BaseGameActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     protected static Integer SCENE_WIDTH = 800;
     protected static Integer SCENE_HEIGHT = 450;
     // private static TimeZone timeZone = TimeZone.getTimeZone("UTC");
     AdView adView;
 
     private BoundCamera camera;
+	private GoogleApiClient mGoogleApiClient;
 
-    // private ResourcesManager resourcesManager;
+	// private ResourcesManager resourcesManager;
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -115,7 +122,16 @@ public class GameActivity extends BaseGameActivity {
 
     @Override
     public void onCreateResources(OnCreateResourcesCallback pOnCreateResourcesCallback) throws IOException {
-	ResourcesManager.prepareManager(mEngine, this, camera, getVertexBufferObjectManager());
+
+		mGoogleApiClient = new GoogleApiClient.Builder(this)
+				.addConnectionCallbacks(this)
+				.addOnConnectionFailedListener(this)
+				.addApi(Games.API).addScope(Games.SCOPE_GAMES)
+				// add other APIs and scopes here as needed
+				.build();
+
+		mGoogleApiClient.connect();
+	ResourcesManager.prepareManager(mEngine, this, camera, getVertexBufferObjectManager(), mGoogleApiClient);
 	// resourcesManager = ResourcesManager.getInstance();
 	pOnCreateResourcesCallback.onCreateResourcesFinished();
 
@@ -201,4 +217,18 @@ public class GameActivity extends BaseGameActivity {
 	}
     }
 
+	@Override
+	public void onConnected(@Nullable Bundle bundle) {
+
+	}
+
+	@Override
+	public void onConnectionSuspended(int i) {
+
+	}
+
+	@Override
+	public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+	}
 }

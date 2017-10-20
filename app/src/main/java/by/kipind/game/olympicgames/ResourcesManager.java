@@ -3,6 +3,8 @@ package by.kipind.game.olympicgames;
 import android.graphics.Color;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+
 import org.andengine.audio.music.Music;
 import org.andengine.audio.music.MusicFactory;
 import org.andengine.audio.sound.Sound;
@@ -40,13 +42,14 @@ import by.kipind.game.olympicgames.resourceObjects.Run100Graf;
 import by.kipind.game.olympicgames.resourceObjects.RunBarGraf;
 import by.kipind.game.olympicgames.resourceObjects.ShootingGraf;
 
-public class ResourcesManager {
+public class ResourcesManager   {
     // ---------------------------------------------
     // VARIABLES
     // ---------------------------------------------
 
     private static final ResourcesManager INSTANCE = new ResourcesManager();
 
+    public GoogleApiClient googleApiClient;
     public Engine engine;
     public GameActivity activity;
     public BoundCamera camera;
@@ -300,12 +303,14 @@ public class ResourcesManager {
      * @param vbom     <br>
      *                 <br>
      *                 We use this method at beginning of game loading, to prepare Resources Manager properly, setting all needed parameters, so we can latter access them from different classes (eg. scenes)
+     * @param googleApiClient
      */
-    public static void prepareManager(Engine engine, GameActivity activity, BoundCamera camera, VertexBufferObjectManager vbom) {
+    public static void prepareManager(Engine engine, GameActivity activity, BoundCamera camera, VertexBufferObjectManager vbom, GoogleApiClient googleApiClient) {
         getInstance().engine = engine;
         getInstance().activity = activity;
         getInstance().camera = camera;
         getInstance().vbom = vbom;
+        getInstance().googleApiClient= googleApiClient;
 
     }
 
@@ -417,5 +422,7 @@ public class ResourcesManager {
             ResourcesManager.getInstance().soundStack.get(soundTag).play();
         }
     }
+
+
 
 }

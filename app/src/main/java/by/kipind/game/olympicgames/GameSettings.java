@@ -2,6 +2,9 @@ package by.kipind.game.olympicgames;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.widget.FrameLayout;
 
 import java.util.Calendar;
@@ -14,7 +17,12 @@ import java.util.regex.Pattern;
 import by.kipind.game.line.CRUDObject;
 import by.kipind.game.utils.LocalDataLoader;
 
-public class GameSettings extends Application {
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.games.Games;
+
+
+public class GameSettings extends Application  {
     final static String LOG_TAG = "myLogs";
 
 
@@ -115,6 +123,8 @@ public class GameSettings extends Application {
         initYearWeek();
         LoadUserData();
         LoadPersonalRecords();
+
+
 
     }
 
@@ -320,7 +330,7 @@ public class GameSettings extends Application {
 
             GAME_DATA_SYNC = "1";
         /* } else { if (RECORD_RUN100 != -1) netAction.sendRecord(GAME_PLAYER_NICK, String.valueOf(-1 * RECORD_RUN100), GAME_CODE + "" + ACTIVITY_ID_RUN100, GAME_CONTEXT, GAME_PLAYER_NICK_ID); else if (RECORD_RUN_BARIER != -1)
-	     * netAction.sendRecord(GAME_PLAYER_NICK, String.valueOf(-1 * RECORD_RUN_BARIER), GAME_CODE + "" + ACTIVITY_ID_RUN_BARIER, GAME_CONTEXT, GAME_PLAYER_NICK_ID); else if (RECORD_LONG_JUMP != -1) netAction.sendRecord(GAME_PLAYER_NICK,
+         * netAction.sendRecord(GAME_PLAYER_NICK, String.valueOf(-1 * RECORD_RUN_BARIER), GAME_CODE + "" + ACTIVITY_ID_RUN_BARIER, GAME_CONTEXT, GAME_PLAYER_NICK_ID); else if (RECORD_LONG_JUMP != -1) netAction.sendRecord(GAME_PLAYER_NICK,
 	     * String.valueOf(RECORD_LONG_JUMP), GAME_CODE + "" + ACTIVITY_ID_LONG_JUMP, GAME_CONTEXT, GAME_PLAYER_NICK_ID); else if (RECORD_PIKE_THROW != -1) netAction.sendRecord(GAME_PLAYER_NICK, String.valueOf(RECORD_PIKE_THROW), GAME_CODE + "" +
 	     * ACTIVITY_ID_PIKE_THROW, GAME_CONTEXT, GAME_PLAYER_NICK_ID); else if (RECORD_SHOOTING != -1) netAction.sendRecord(GAME_PLAYER_NICK, String.valueOf(-1 * RECORD_SHOOTING), GAME_CODE + "" + ACTIVITY_ID_SHOOTING, GAME_CONTEXT,
 	     * GAME_PLAYER_NICK_ID); else if (RECORD_ARCHERY != -1) netAction.sendRecord(GAME_PLAYER_NICK, String.valueOf(RECORD_ARCHERY), GAME_CODE + "" + ACTIVITY_ID_ARCHERY, GAME_CONTEXT, GAME_PLAYER_NICK_ID);
@@ -418,5 +428,6 @@ public class GameSettings extends Application {
 
 
     }
+
 
 }
