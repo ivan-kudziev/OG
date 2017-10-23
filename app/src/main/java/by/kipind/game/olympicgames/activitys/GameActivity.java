@@ -15,6 +15,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.Games;
+import com.google.example.games.basegameutils.BaseGameUtils;
 
 import org.andengine.engine.Engine;
 import org.andengine.engine.LimitedFPSEngine;
@@ -32,6 +33,7 @@ import org.andengine.ui.activity.BaseGameActivity;
 import java.io.IOException;
 
 import by.kipind.game.olympicgames.GameSettings;
+import by.kipind.game.olympicgames.R;
 import by.kipind.game.olympicgames.ResourcesManager;
 import by.kipind.game.olympicgames.SceneManager;
 import by.kipind.game.reklama.AdModule;
@@ -130,7 +132,7 @@ public class GameActivity extends BaseGameActivity implements GoogleApiClient.Co
 				// add other APIs and scopes here as needed
 				.build();
 
-		mGoogleApiClient.connect();
+		//mGoogleApiClient.connect();
 	ResourcesManager.prepareManager(mEngine, this, camera, getVertexBufferObjectManager(), mGoogleApiClient);
 	// resourcesManager = ResourcesManager.getInstance();
 	pOnCreateResourcesCallback.onCreateResourcesFinished();
@@ -229,6 +231,13 @@ public class GameActivity extends BaseGameActivity implements GoogleApiClient.Co
 
 	@Override
 	public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+		/*GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
+		int connectionStatusCode = googleApiAvailability.isGooglePlayServicesAvailable(this);
+		Toast.makeText(this, (CharSequence) (connectionStatusCode+"|||"), Toast.LENGTH_LONG).show();
+*/
+		if (!BaseGameUtils.resolveConnectionFailure(this,mGoogleApiClient, connectionResult,connectionResult.getErrorCode(), getString(R.string.signin_other_error))) {
+			//Toast.makeText(this, (CharSequence) connectionResult.getErrorMessage()+"|||", Toast.LENGTH_LONG).show();
+		}
 
 	}
 }
