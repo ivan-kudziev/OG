@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "by.kipind.game.olympicgames"
@@ -36,14 +36,14 @@ dependencies {
 
     compile project(':andEngine')
     compile project(':andEnginePhysicsBox2DExtension')
-    compile project(':BaseGameUtils')
+    //compile project(':BaseGameUtils')
     //  compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
 
 
-    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:multidex:1.0.2'
 
-    compile 'com.android.support:support-compat:25.3.1'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:support-v4:25.4.0'
+    compile 'com.android.support:support-compat:25.4.0'
     compile 'com.android.support:palette-v7:25.4.0'
 
     compile 'com.google.android.gms:play-services-ads:11.4.2'

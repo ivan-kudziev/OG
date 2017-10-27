@@ -1,4 +1,4 @@
 include ':app'
-include ':BaseGameUtils'
+//include ':BaseGameUtils'
 include ':andEngine'
 include ':andEnginePhysicsBox2DExtension'
