@@ -176,12 +176,12 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
 
 	@Override
 	public boolean onMenuItemClicked(MenuScene pMenuScene, IMenuItem pMenuItem, float pMenuItemLocalX, float pMenuItemLocalY) {
-		// :TODO change buton click sound
+		// :TODO change button click sound
 		ResourcesManager.getInstance().playSoundFromStack("arch_vistrel");
 
 		if (pMenuItem.getID() != 7 && (GameSettings.GAME_PLAYER_NICK_ID == "-2" || GameSettings.GAME_PLAYER_NICK == "" || GameSettings.GAME_PLAYER_NICK_ID == "-1")) {
-			//   SceneManager.getInstance().loadGameScene(engine, 0);// menuItemPlInf
-			resourcesManager.googleApiClient.connect();
+			   SceneManager.getInstance().loadGameScene(engine, 0);// menuItemPlInf
+			//resourcesManager.googleApiClient.connect();
 		} else {
 			if (pMenuItem.getID() >= 1 && pMenuItem.getID() <= 6) {
 				ResourcesManager.getInstance().musicPause(1);
