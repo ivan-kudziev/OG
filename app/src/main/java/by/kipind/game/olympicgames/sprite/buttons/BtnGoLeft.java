@@ -1,11 +1,11 @@
 package by.kipind.game.olympicgames.sprite.buttons;
 
+import android.view.MotionEvent;
+
 import org.andengine.entity.scene.ITouchArea;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
-
-import android.view.MotionEvent;
 
 public class BtnGoLeft extends AnimBtn {
     private long btnDownTime;

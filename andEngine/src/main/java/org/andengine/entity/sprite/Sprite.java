@@ -1,5 +1,7 @@
 package org.andengine.entity.sprite;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.shape.Shape;
 import org.andengine.entity.sprite.vbo.HighPerformanceSpriteVertexBufferObject;
@@ -13,8 +15,6 @@ import org.andengine.opengl.vbo.DrawType;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributesBuilder;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2010 Nicolas Gramlich

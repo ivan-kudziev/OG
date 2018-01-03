@@ -1,5 +1,7 @@
 package org.andengine.entity.primitive;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.primitive.vbo.HighPerformanceGradientVertexBufferObject;
 import org.andengine.entity.primitive.vbo.IGradientVertexBufferObject;
@@ -14,8 +16,6 @@ import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributesBuilder;
 import org.andengine.util.adt.color.Color;
 import org.andengine.util.math.MathUtils;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2012 Zynga Inc.

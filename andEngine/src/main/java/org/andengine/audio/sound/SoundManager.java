@@ -1,12 +1,12 @@
 package org.andengine.audio.sound;
 
-import org.andengine.audio.BaseAudioManager;
-import org.andengine.audio.sound.exception.SoundException;
-
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.media.SoundPool.OnLoadCompleteListener;
 import android.util.SparseArray;
+
+import org.andengine.audio.BaseAudioManager;
+import org.andengine.audio.sound.exception.SoundException;
 
 /**
  * (c) 2010 Nicolas Gramlich

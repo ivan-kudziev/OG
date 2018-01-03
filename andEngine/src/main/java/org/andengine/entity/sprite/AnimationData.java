@@ -1,10 +1,10 @@
 package org.andengine.entity.sprite;
 
-import java.util.Arrays;
-
 import org.andengine.util.adt.array.ArrayUtils;
 import org.andengine.util.modifier.IModifier.DeepCopyNotSupportedException;
 import org.andengine.util.time.TimeConstants;
+
+import java.util.Arrays;
 
 /**
  * (c) 2012 Zynga Inc.

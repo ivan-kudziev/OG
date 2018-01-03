@@ -1,15 +1,15 @@
 package org.andengine.opengl.view;
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
+import android.opengl.GLES20;
+import android.opengl.GLSurfaceView;
 
 import org.andengine.engine.Engine;
 import org.andengine.engine.options.RenderOptions;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.debug.Debug;
 
-import android.opengl.GLES20;
-import android.opengl.GLSurfaceView;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
 
 /**
  * (c) 2010 Nicolas Gramlich

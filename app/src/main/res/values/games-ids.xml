@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Google Play game services IDs.
+Save this file as res/values/gagagames-ids.xml.xml.xml in your project.
+-->
+<resources>
+    <!-- app_id -->
+    <string name="app_id" translatable="false">735308239178</string>
+    <!-- package_name -->
+    <string name="package_name" translatable="false">by.kipind.game.olympicgames</string>
+    <!-- leaderboard long_jump -->
+    <string name="leaderboard_long_jump" translatable="false">CgkIyqKlnrMVEAIQAQ</string>
+</resources>

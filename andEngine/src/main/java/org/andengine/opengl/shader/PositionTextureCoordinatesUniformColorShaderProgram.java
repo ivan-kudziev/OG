@@ -1,11 +1,11 @@
 package org.andengine.opengl.shader;
 
+import android.opengl.GLES20;
+
 import org.andengine.opengl.shader.constants.ShaderProgramConstants;
 import org.andengine.opengl.shader.exception.ShaderProgramLinkException;
 import org.andengine.opengl.util.GLState;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2012 Zynga Inc.

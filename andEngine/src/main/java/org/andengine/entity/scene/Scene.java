@@ -1,5 +1,7 @@
 package org.andengine.entity.scene;
 
+import android.util.SparseArray;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.runnable.RunnableHandler;
 import org.andengine.entity.Entity;
@@ -13,8 +15,6 @@ import org.andengine.opengl.util.GLState;
 import org.andengine.util.Constants;
 import org.andengine.util.adt.color.Color;
 import org.andengine.util.adt.list.SmartList;
-
-import android.util.SparseArray;
 
 /**
  * (c) 2010 Nicolas Gramlich

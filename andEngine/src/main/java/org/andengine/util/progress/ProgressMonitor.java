@@ -1,8 +1,9 @@
 package org.andengine.util.progress;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.andengine.util.math.MathUtils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**

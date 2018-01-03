@@ -1,8 +1,5 @@
 package org.andengine.util.level;
 
-import java.io.IOException;
-import java.util.HashMap;
-
 import org.andengine.BuildConfig;
 import org.andengine.entity.IEntity;
 import org.andengine.util.adt.list.SmartList;
@@ -11,6 +8,9 @@ import org.andengine.util.level.exception.LevelLoaderException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * (c) 2010 Nicolas Gramlich

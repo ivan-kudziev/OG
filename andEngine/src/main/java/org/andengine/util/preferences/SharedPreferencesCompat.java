@@ -1,9 +1,9 @@
 package org.andengine.util.preferences;
 
+import android.content.SharedPreferences.Editor;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import android.content.SharedPreferences.Editor;
 
 /**
  * (c) 2013 Nicolas Gramlich

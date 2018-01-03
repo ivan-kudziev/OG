@@ -1,12 +1,12 @@
 package org.andengine.util.adt.bit;
 
+import org.andengine.util.adt.data.constants.DataConstants;
+import org.andengine.util.exception.MethodNotYetImplementedException;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
-
-import org.andengine.util.adt.data.constants.DataConstants;
-import org.andengine.util.exception.MethodNotYetImplementedException;
 
 
 /**

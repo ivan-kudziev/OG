@@ -1,9 +1,9 @@
 package org.andengine.ui.activity;
 
-import java.io.IOException;
-
 import org.andengine.entity.scene.Scene;
 import org.andengine.ui.IGameInterface;
+
+import java.io.IOException;
 
 
 /**

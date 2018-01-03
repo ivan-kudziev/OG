@@ -1,12 +1,12 @@
 package org.andengine.entity.primitive;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.primitive.vbo.ILineChainVertexBufferObject;
 import org.andengine.opengl.util.GLState;
 import org.andengine.opengl.vbo.DrawType;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2013 Nicolas Gramlich

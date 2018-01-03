@@ -1,12 +1,12 @@
 package org.andengine.entity.primitive.vbo;
 
-import java.nio.FloatBuffer;
-
 import org.andengine.entity.primitive.Line;
 import org.andengine.opengl.vbo.DrawType;
 import org.andengine.opengl.vbo.LowMemoryVertexBufferObject;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
+
+import java.nio.FloatBuffer;
 
 /**
  * (c) 2012 Zynga Inc.

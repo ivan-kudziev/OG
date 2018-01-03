@@ -1,7 +1,5 @@
 package org.andengine.entity.sprite.batch;
 
-import java.util.ArrayList;
-
 import org.andengine.entity.IEntity;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.sprite.batch.vbo.ISpriteBatchVertexBufferObject;
@@ -10,6 +8,8 @@ import org.andengine.opengl.texture.ITexture;
 import org.andengine.opengl.vbo.DrawType;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.util.adt.list.SmartList;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

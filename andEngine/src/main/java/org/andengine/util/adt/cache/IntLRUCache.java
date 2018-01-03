@@ -1,8 +1,8 @@
 package org.andengine.util.adt.cache;
 
-import org.andengine.util.adt.pool.GenericPool;
-
 import android.util.SparseArray;
+
+import org.andengine.util.adt.pool.GenericPool;
 
 /**
  * (c) 2011 Zynga Inc.

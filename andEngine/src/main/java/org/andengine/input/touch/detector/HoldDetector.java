@@ -1,8 +1,8 @@
 package org.andengine.input.touch.detector;
 
-import org.andengine.input.touch.TouchEvent;
-
 import android.view.MotionEvent;
+
+import org.andengine.input.touch.TouchEvent;
 
 /**
  * (c) 2010 Nicolas Gramlich

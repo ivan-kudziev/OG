@@ -1,11 +1,11 @@
 package org.andengine.entity.shape;
 
+import android.opengl.GLES20;
+
 import org.andengine.entity.IEntity;
 import org.andengine.opengl.shader.ShaderProgram;
 import org.andengine.opengl.vbo.IVertexBufferObject;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2010 Nicolas Gramlich

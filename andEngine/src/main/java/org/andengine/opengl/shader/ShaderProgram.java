@@ -1,6 +1,6 @@
 package org.andengine.opengl.shader;
 
-import java.util.HashMap;
+import android.opengl.GLES20;
 
 import org.andengine.opengl.shader.constants.ShaderProgramConstants;
 import org.andengine.opengl.shader.exception.ShaderProgramCompileException;
@@ -12,7 +12,7 @@ import org.andengine.opengl.util.GLState;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttribute;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 
-import android.opengl.GLES20;
+import java.util.HashMap;
 
 
 /**

@@ -1,10 +1,10 @@
 package org.andengine.opengl.texture;
 
-import java.io.IOException;
+import android.opengl.GLES20;
 
 import org.andengine.opengl.util.GLState;
 
-import android.opengl.GLES20;
+import java.io.IOException;
 
 /**
  * (c) 2012 Zynga Inc.

@@ -1,11 +1,11 @@
 package org.andengine.util;
 
-import org.andengine.util.system.SystemUtils;
-import org.andengine.util.system.SystemUtils.SystemUtilsException;
-
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+
+import org.andengine.util.system.SystemUtils;
+import org.andengine.util.system.SystemUtils.SystemUtilsException;
 
 /**
  * (c) 2010 Nicolas Gramlich

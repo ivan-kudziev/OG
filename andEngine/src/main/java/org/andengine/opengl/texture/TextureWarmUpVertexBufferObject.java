@@ -1,6 +1,6 @@
 package org.andengine.opengl.texture;
 
-import java.nio.FloatBuffer;
+import android.opengl.GLES20;
 
 import org.andengine.entity.sprite.UncoloredSprite;
 import org.andengine.opengl.shader.PositionTextureCoordinatesShaderProgram;
@@ -11,7 +11,7 @@ import org.andengine.opengl.vbo.VertexBufferObject;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributesBuilder;
 
-import android.opengl.GLES20;
+import java.nio.FloatBuffer;
 
 /**
  * (c) 2012 Zynga Inc.

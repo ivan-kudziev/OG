@@ -1,7 +1,5 @@
 package org.andengine.entity.text.vbo;
 
-import java.util.ArrayList;
-
 import org.andengine.entity.text.Text;
 import org.andengine.opengl.font.IFont;
 import org.andengine.opengl.font.Letter;
@@ -11,6 +9,8 @@ import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.util.adt.align.HorizontalAlign;
 import org.andengine.util.adt.list.IFloatList;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2012 Zynga Inc.

@@ -1,11 +1,11 @@
 package org.andengine.opengl.texture.atlas.bitmap.source;
 
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+
 import org.andengine.opengl.util.GLHelper;
 import org.andengine.util.adt.color.Color;
 import org.andengine.util.debug.Debug;
-
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
 
 /**
  * (c) 2010 Nicolas Gramlich

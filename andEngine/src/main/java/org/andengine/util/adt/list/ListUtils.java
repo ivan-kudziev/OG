@@ -1,12 +1,12 @@
 package org.andengine.util.adt.list;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.andengine.util.IMatcher;
 import org.andengine.util.adt.queue.IQueue;
 import org.andengine.util.adt.queue.concurrent.SynchronizedQueue;
 import org.andengine.util.math.MathUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * (c) 2010 Nicolas Gramlich

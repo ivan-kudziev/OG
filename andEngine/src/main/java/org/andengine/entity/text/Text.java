@@ -1,6 +1,6 @@
 package org.andengine.entity.text;
 
-import java.util.ArrayList;
+import android.opengl.GLES20;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.shape.Shape;
@@ -22,7 +22,7 @@ import org.andengine.util.adt.data.constants.DataConstants;
 import org.andengine.util.adt.list.FloatArrayList;
 import org.andengine.util.adt.list.IFloatList;
 
-import android.opengl.GLES20;
+import java.util.ArrayList;
 
 /**
  * TODO Try Degenerate Triangles?

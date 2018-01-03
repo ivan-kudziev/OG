@@ -1,16 +1,5 @@
 package org.andengine.util.system;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Method;
-import java.util.Scanner;
-import java.util.regex.MatchResult;
-
-import org.andengine.util.StreamUtils;
-import org.andengine.util.adt.data.constants.DataConstants;
-import org.andengine.util.exception.AndEngineException;
-import org.andengine.util.exception.MethodNotFoundException;
-
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -21,6 +10,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Debug;
 import android.os.Debug.MemoryInfo;
+
+import org.andengine.util.StreamUtils;
+import org.andengine.util.adt.data.constants.DataConstants;
+import org.andengine.util.exception.AndEngineException;
+import org.andengine.util.exception.MethodNotFoundException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Method;
+import java.util.Scanner;
+import java.util.regex.MatchResult;
 
 /**
  * (c) 2010 Nicolas Gramlich

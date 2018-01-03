@@ -1,11 +1,11 @@
 package org.andengine.extension.physics.box2d;
 
-import java.util.ArrayList;
+import com.badlogic.gdx.physics.box2d.Body;
 
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.IEntity;
 
-import com.badlogic.gdx.physics.box2d.Body;
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

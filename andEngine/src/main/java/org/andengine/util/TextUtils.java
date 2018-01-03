@@ -1,10 +1,10 @@
 package org.andengine.util;
 
+import org.andengine.util.adt.array.ArrayUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import org.andengine.util.adt.array.ArrayUtils;
 
 /**
  * (c) 2010 Nicolas Gramlich

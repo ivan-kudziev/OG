@@ -1,8 +1,8 @@
 package org.andengine.extension.physics.box2d.util;
 
-import org.andengine.util.adt.pool.GenericPool;
-
 import com.badlogic.gdx.math.Vector2;
+
+import org.andengine.util.adt.pool.GenericPool;
 
 /**
  * (c) 2010 Nicolas Gramlich

@@ -1,11 +1,11 @@
 package org.andengine.opengl.texture.atlas.bitmap.source.decorator;
 
+import android.os.Build;
+
 import org.andengine.opengl.texture.atlas.bitmap.source.ColorKeyBitmapTextureAtlasSource;
 import org.andengine.opengl.texture.atlas.bitmap.source.IBitmapTextureAtlasSource;
 import org.andengine.opengl.texture.atlas.bitmap.source.decorator.shape.IBitmapTextureAtlasSourceDecoratorShape;
 import org.andengine.util.adt.color.Color;
-
-import android.os.Build;
 
 /**
  * (c) 2010 Nicolas Gramlich

@@ -1,9 +1,9 @@
 package org.andengine.opengl.font;
 
+import org.andengine.opengl.util.GLState;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import org.andengine.opengl.util.GLState;
 
 
 /**

@@ -1,9 +1,6 @@
 package org.andengine.opengl.texture;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.content.res.AssetManager;
 
 import org.andengine.opengl.texture.bitmap.AssetBitmapTexture;
 import org.andengine.opengl.texture.bitmap.BitmapTexture;
@@ -12,7 +9,10 @@ import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.io.in.IInputStreamOpener;
 import org.andengine.util.debug.Debug;
 
-import android.content.res.AssetManager;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * (c) 2010 Nicolas Gramlich

@@ -1,15 +1,15 @@
 package org.andengine.entity.util;
 
-import java.nio.IntBuffer;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.opengl.GLES20;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.Entity;
 import org.andengine.opengl.util.GLHelper;
 import org.andengine.opengl.util.GLState;
 
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.opengl.GLES20;
+import java.nio.IntBuffer;
 
 /**
  * (c) 2010 Nicolas Gramlich

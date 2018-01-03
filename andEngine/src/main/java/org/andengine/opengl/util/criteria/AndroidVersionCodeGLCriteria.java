@@ -1,9 +1,9 @@
 package org.andengine.opengl.util.criteria;
 
+import android.os.Build;
+
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.data.operator.IntOperator;
-
-import android.os.Build;
 
 /**
  * (c) 2011 Zynga Inc.

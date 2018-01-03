@@ -1,8 +1,8 @@
 package org.andengine.util.escape;
 
-import org.andengine.util.adt.map.IIntLookupMap;
-
 import android.text.TextUtils;
+
+import org.andengine.util.adt.map.IIntLookupMap;
 
 /**
  * (c) 2012 Zynga Inc.

@@ -1,15 +1,15 @@
 package org.andengine.audio.music;
 
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
+
+import org.andengine.util.StreamUtils;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.IOException;
-
-import org.andengine.util.StreamUtils;
-
-import android.content.Context;
-import android.content.res.AssetFileDescriptor;
-import android.media.MediaPlayer;
 
 /**
  * (c) 2010 Nicolas Gramlich

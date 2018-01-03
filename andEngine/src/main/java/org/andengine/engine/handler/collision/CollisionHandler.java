@@ -1,10 +1,10 @@
 package org.andengine.engine.handler.collision;
 
-import java.util.ArrayList;
-
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.shape.IShape;
 import org.andengine.util.adt.list.ListUtils;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

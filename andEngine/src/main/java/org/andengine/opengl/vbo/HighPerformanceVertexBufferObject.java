@@ -1,12 +1,12 @@
 package org.andengine.opengl.vbo;
 
-import java.nio.FloatBuffer;
+import android.opengl.GLES20;
 
 import org.andengine.opengl.util.BufferUtils;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.util.system.SystemUtils;
 
-import android.opengl.GLES20;
+import java.nio.FloatBuffer;
 
 /**
  * Compared to a {@link LowMemoryVertexBufferObject}, the {@link HighPerformanceVertexBufferObject} uses <b><u>2x</u> the heap memory</b>,

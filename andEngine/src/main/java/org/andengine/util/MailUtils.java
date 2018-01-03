@@ -1,11 +1,11 @@
 package org.andengine.util;
 
-import org.andengine.util.mime.MIMEType;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
+
+import org.andengine.util.mime.MIMEType;
 
 /**
  * (c) 2013 Nicolas Gramlich

@@ -1,8 +1,5 @@
 package org.andengine.entity.scene.menu.item.decorator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.IEntity;
@@ -19,6 +16,9 @@ import org.andengine.opengl.vbo.IVertexBufferObject;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.util.adt.color.Color;
 import org.andengine.util.adt.transformation.Transformation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * I HATE THIS CLASS!

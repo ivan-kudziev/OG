@@ -1,8 +1,7 @@
 package org.andengine.util.levelstats;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.content.SharedPreferences;
 
 import org.andengine.util.StreamUtils;
 import org.andengine.util.call.Callback;
@@ -18,8 +17,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * (c) 2010 Nicolas Gramlich

@@ -1,10 +1,5 @@
 package org.andengine.util.adt.spatial.quadtree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
 import org.andengine.util.IMatcher;
 import org.andengine.util.adt.bounds.BoundsSplit;
 import org.andengine.util.adt.bounds.BoundsSplit.BoundsSplitException;
@@ -13,6 +8,11 @@ import org.andengine.util.adt.spatial.ISpatialItem;
 import org.andengine.util.call.ParameterCallable;
 import org.andengine.util.debug.Debug;
 import org.andengine.util.exception.AndEngineRuntimeException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * TODO Make all methods non-synchronized and add a SynchronizedXZYQuadTree subclasses.

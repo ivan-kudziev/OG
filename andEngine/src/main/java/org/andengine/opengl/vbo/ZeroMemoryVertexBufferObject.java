@@ -1,7 +1,6 @@
 package org.andengine.opengl.vbo;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.opengl.GLES20;
 
 import org.andengine.opengl.shader.ShaderProgram;
 import org.andengine.opengl.util.BufferUtils;
@@ -9,7 +8,8 @@ import org.andengine.opengl.util.GLState;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.util.adt.data.constants.DataConstants;
 
-import android.opengl.GLES20;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 /**
  * Compared to a {@link HighPerformanceVertexBufferObject} or a {@link LowMemoryVertexBufferObject}, the {@link ZeroMemoryVertexBufferObject} uses <b><u>no</u> permanent heap memory</b>,

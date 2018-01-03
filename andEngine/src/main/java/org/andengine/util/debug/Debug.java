@@ -1,8 +1,8 @@
 package org.andengine.util.debug;
 
-import org.andengine.util.Constants;
-
 import android.util.Log;
+
+import org.andengine.util.Constants;
 
 /**
  * (c) 2010 Nicolas Gramlich

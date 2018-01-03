@@ -1,7 +1,5 @@
 package org.andengine.util.exception;
 
-import org.andengine.util.exception.AndEngineRuntimeException;
-
 /**
  * (c) 2013 Nicolas Gramlich
  *

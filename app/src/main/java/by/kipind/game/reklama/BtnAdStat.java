@@ -7,16 +7,9 @@ import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 
-import by.kipind.game.olympicgames.GameSettings;
-import by.kipind.game.olympicgames.ResourcesManager;
-import by.kipind.game.olympicgames.SceneManager;
-
 /*import com.appodeal.ads.Appodeal;
  import com.appodeal.ads.RewardedVideoCallbacks;
  */
-import android.util.Log;
-import android.view.MotionEvent;
-import android.widget.Toast;
 
 public class BtnAdStat extends AnimatedSprite implements IOnAreaTouchListener {
 

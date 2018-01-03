@@ -1,9 +1,7 @@
 package org.andengine.opengl.font;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import android.content.res.AssetManager;
+import android.util.SparseArray;
 
 import org.andengine.entity.text.Text;
 import org.andengine.opengl.font.exception.FontException;
@@ -17,8 +15,10 @@ import org.andengine.util.StreamUtils;
 import org.andengine.util.TextUtils;
 import org.andengine.util.adt.io.in.AssetInputStreamOpener;
 
-import android.content.res.AssetManager;
-import android.util.SparseArray;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * The {@link BitmapFont} class is capable of parsing and loading <code>*.fnt</code> fonts.

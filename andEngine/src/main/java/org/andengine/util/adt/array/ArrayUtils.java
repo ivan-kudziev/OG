@@ -1,10 +1,10 @@
 package org.andengine.util.adt.array;
 
-import java.lang.reflect.Array;
-import java.util.List;
-
 import org.andengine.util.IMatcher;
 import org.andengine.util.math.MathUtils;
+
+import java.lang.reflect.Array;
+import java.util.List;
 
 /**
  * (c) 2010 Nicolas Gramlich

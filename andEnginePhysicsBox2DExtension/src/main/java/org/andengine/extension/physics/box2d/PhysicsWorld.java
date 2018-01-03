@@ -1,11 +1,5 @@
 package org.andengine.extension.physics.box2d;
 
-import java.util.Iterator;
-import java.util.List;
-
-import org.andengine.engine.handler.IUpdateHandler;
-import org.andengine.engine.handler.runnable.RunnableHandler;
-
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -18,6 +12,12 @@ import com.badlogic.gdx.physics.box2d.JointDef;
 import com.badlogic.gdx.physics.box2d.QueryCallback;
 import com.badlogic.gdx.physics.box2d.RayCastCallback;
 import com.badlogic.gdx.physics.box2d.World;
+
+import org.andengine.engine.handler.IUpdateHandler;
+import org.andengine.engine.handler.runnable.RunnableHandler;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * (c) 2010 Nicolas Gramlich

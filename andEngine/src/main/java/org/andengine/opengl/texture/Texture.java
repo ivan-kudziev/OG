@@ -1,10 +1,10 @@
 package org.andengine.opengl.texture;
 
-import java.io.IOException;
-
 import org.andengine.opengl.texture.atlas.source.ITextureAtlasSource;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.data.constants.DataConstants;
+
+import java.io.IOException;
 
 /**
  * (c) 2010 Nicolas Gramlich

@@ -1,5 +1,12 @@
 package org.andengine.util.level;
 
+import android.content.res.AssetManager;
+
+import org.andengine.util.StreamUtils;
+import org.andengine.util.level.exception.LevelLoaderException;
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,13 +14,6 @@ import java.util.HashMap;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import org.andengine.util.StreamUtils;
-import org.andengine.util.level.exception.LevelLoaderException;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
-
-import android.content.res.AssetManager;
 
 /**
  * (c) 2010 Nicolas Gramlich

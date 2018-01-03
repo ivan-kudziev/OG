@@ -1,9 +1,6 @@
 package org.andengine.util.texturepack;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import javax.microedition.khronos.opengles.GL10;
+import android.content.res.AssetManager;
 
 import org.andengine.opengl.texture.ITexture;
 import org.andengine.opengl.texture.PixelFormat;
@@ -25,7 +22,10 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import android.content.res.AssetManager;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.microedition.khronos.opengles.GL10;
 
 /**
  * (c) 2011 Zynga Inc.

@@ -1,10 +1,10 @@
 package org.andengine.entity;
 
-import java.util.Comparator;
-import java.util.List;
-
 import org.andengine.util.adt.list.IList;
 import org.andengine.util.algorithm.sort.InsertionSorter;
+
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * (c) 2010 Nicolas Gramlich

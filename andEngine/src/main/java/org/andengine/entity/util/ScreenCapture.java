@@ -1,7 +1,7 @@
 package org.andengine.entity.util;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.Entity;
@@ -10,8 +10,8 @@ import org.andengine.opengl.util.GLState;
 import org.andengine.util.StreamUtils;
 import org.andengine.util.debug.Debug;
 
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.CompressFormat;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 /**
  * (c) 2010 Nicolas Gramlich

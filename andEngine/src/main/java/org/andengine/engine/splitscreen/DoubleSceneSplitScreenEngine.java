@@ -1,13 +1,13 @@
 package org.andengine.engine.splitscreen;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.entity.scene.Scene;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2010 Nicolas Gramlich

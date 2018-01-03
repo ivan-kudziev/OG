@@ -1,11 +1,11 @@
 package org.andengine.util;
 
-import org.andengine.util.system.SystemUtils;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+
+import org.andengine.util.system.SystemUtils;
 
 /**
  * (c) 2013 Nicolas Gramlich

@@ -1,12 +1,12 @@
 package org.andengine.opengl.view;
 
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLDisplay;
+import android.opengl.GLSurfaceView;
 
 import org.andengine.engine.options.ConfigChooserOptions;
 
-import android.opengl.GLSurfaceView;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLDisplay;
 
 /**
  * (c) 2011 Zynga Inc.

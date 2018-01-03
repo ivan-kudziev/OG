@@ -1,10 +1,10 @@
 package org.andengine.util;
 
-import org.andengine.util.system.SystemUtils;
-
 import android.annotation.TargetApi;
 import android.os.AsyncTask;
 import android.os.Build;
+
+import org.andengine.util.system.SystemUtils;
 
 
 /**

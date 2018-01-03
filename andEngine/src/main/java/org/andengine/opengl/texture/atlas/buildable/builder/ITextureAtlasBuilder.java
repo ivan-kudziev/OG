@@ -1,11 +1,11 @@
 package org.andengine.opengl.texture.atlas.buildable.builder;
 
-import java.util.ArrayList;
-
 import org.andengine.opengl.texture.atlas.ITextureAtlas;
 import org.andengine.opengl.texture.atlas.buildable.BuildableTextureAtlas.TextureAtlasSourceWithWithLocationCallback;
 import org.andengine.opengl.texture.atlas.source.ITextureAtlasSource;
 import org.andengine.util.exception.AndEngineException;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

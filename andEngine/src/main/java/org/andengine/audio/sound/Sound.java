@@ -1,9 +1,9 @@
 package org.andengine.audio.sound;
 
+import android.media.SoundPool;
+
 import org.andengine.audio.BaseAudioEntity;
 import org.andengine.audio.sound.exception.SoundReleasedException;
-
-import android.media.SoundPool;
 
 /**
  * (c) 2010 Nicolas Gramlich

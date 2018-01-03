@@ -1,7 +1,9 @@
 package org.andengine.opengl.texture.atlas.bitmap;
 
 
-import java.io.IOException;
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 
 import org.andengine.opengl.texture.atlas.bitmap.source.AssetBitmapTextureAtlasSource;
 import org.andengine.opengl.texture.atlas.bitmap.source.IBitmapTextureAtlasSource;
@@ -12,9 +14,7 @@ import org.andengine.opengl.texture.region.TextureRegionFactory;
 import org.andengine.opengl.texture.region.TiledTextureRegion;
 import org.andengine.util.exception.AndEngineRuntimeException;
 
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
+import java.io.IOException;
 
 
 /**

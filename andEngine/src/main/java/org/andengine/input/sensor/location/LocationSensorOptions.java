@@ -1,8 +1,8 @@
 package org.andengine.input.sensor.location;
 
-import org.andengine.util.time.TimeConstants;
-
 import android.location.Criteria;
+
+import org.andengine.util.time.TimeConstants;
 
 /**
  * (c) 2010 Nicolas Gramlich

@@ -1,7 +1,5 @@
 package org.andengine.entity.primitive.vbo;
 
-import java.nio.FloatBuffer;
-
 import org.andengine.entity.primitive.Gradient;
 import org.andengine.opengl.vbo.DrawType;
 import org.andengine.opengl.vbo.LowMemoryVertexBufferObject;
@@ -10,6 +8,8 @@ import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.util.adt.color.ColorUtils;
 import org.andengine.util.math.MathConstants;
 import org.andengine.util.math.MathUtils;
+
+import java.nio.FloatBuffer;
 
 /**
  * (c) 2012 Zynga Inc.

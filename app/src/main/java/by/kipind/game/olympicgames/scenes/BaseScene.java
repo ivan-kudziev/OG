@@ -1,12 +1,13 @@
 package by.kipind.game.olympicgames.scenes;
 
+import android.app.Activity;
+import android.content.Context;
+
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.BoundCamera;
 import org.andengine.entity.scene.Scene;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 
-import android.app.Activity;
-import android.content.Context;
 import by.kipind.game.olympicgames.GameSettings;
 import by.kipind.game.olympicgames.ResourcesManager;
 import by.kipind.game.olympicgames.SceneManager.SceneType;

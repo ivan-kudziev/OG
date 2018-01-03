@@ -1,8 +1,8 @@
 package org.andengine.engine.handler.runnable;
 
-import java.util.ArrayList;
-
 import org.andengine.engine.handler.IUpdateHandler;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

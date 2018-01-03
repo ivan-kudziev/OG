@@ -1,10 +1,10 @@
 package org.andengine.util.debug;
 
+import org.andengine.util.debug.Debug.DebugLevel;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
-
-import org.andengine.util.debug.Debug.DebugLevel;
 
 /**
  * (c) 2011 Zynga Inc.

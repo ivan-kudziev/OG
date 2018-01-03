@@ -1,5 +1,13 @@
 package org.andengine.util.adt.dictionary;
 
+import org.andengine.util.FileUtils;
+import org.andengine.util.StreamUtils;
+import org.andengine.util.adt.bit.BitVector;
+import org.andengine.util.adt.bit.ByteBackedBitVector;
+import org.andengine.util.adt.bit.IBitVector;
+import org.andengine.util.adt.bit.LongBackedBitVector;
+import org.andengine.util.adt.data.DataUtils;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -10,14 +18,6 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-
-import org.andengine.util.FileUtils;
-import org.andengine.util.StreamUtils;
-import org.andengine.util.adt.bit.BitVector;
-import org.andengine.util.adt.bit.ByteBackedBitVector;
-import org.andengine.util.adt.bit.IBitVector;
-import org.andengine.util.adt.bit.LongBackedBitVector;
-import org.andengine.util.adt.data.DataUtils;
 
 
 /**

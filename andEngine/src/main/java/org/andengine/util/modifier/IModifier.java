@@ -1,8 +1,8 @@
 package org.andengine.util.modifier;
 
-import java.util.Comparator;
-
 import org.andengine.util.exception.AndEngineRuntimeException;
+
+import java.util.Comparator;
 
 
 /**

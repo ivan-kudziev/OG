@@ -1,13 +1,13 @@
 package org.andengine.util.adt.queue.concurrent;
 
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
 
 import org.andengine.util.adt.list.CircularList;
 import org.andengine.util.adt.list.IList;
 
-import android.util.SparseArray;
-import android.util.SparseIntArray;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * The {@link PriorityBlockingAggregatorQueue} is a thread-safe queue that internally holds multiple queues each having their own priority.

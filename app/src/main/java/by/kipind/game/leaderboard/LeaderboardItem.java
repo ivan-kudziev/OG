@@ -1,7 +1,5 @@
 package by.kipind.game.leaderboard;
 
-import java.sql.Date;
-
 public class LeaderboardItem {
 private  int uid;
 private  int leadPlase;

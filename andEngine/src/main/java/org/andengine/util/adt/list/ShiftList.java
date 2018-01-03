@@ -1,8 +1,8 @@
 package org.andengine.util.adt.list;
 
-import java.util.Arrays;
-
 import org.andengine.util.adt.queue.IQueue;
+
+import java.util.Arrays;
 
 /**
  * TODO This class could take some kind of AllocationStrategy object.

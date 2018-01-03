@@ -1,9 +1,6 @@
 package org.andengine.opengl.texture.compressed.pvr.pixelbufferstrategy;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
+import android.opengl.GLES20;
 
 import org.andengine.opengl.texture.PixelFormat;
 import org.andengine.opengl.texture.compressed.pvr.PVRTexture;
@@ -11,7 +8,10 @@ import org.andengine.opengl.texture.compressed.pvr.PVRTexture.PVRTextureHeader;
 import org.andengine.util.StreamUtils;
 import org.andengine.util.exception.AndEngineRuntimeException;
 
-import android.opengl.GLES20;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.Buffer;
+import java.nio.ByteBuffer;
 
 /**
  * (c) 2011 Zynga Inc.

@@ -1,11 +1,11 @@
 package org.andengine.opengl.vbo;
 
+import org.andengine.opengl.util.BufferUtils;
+import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.locks.ReentrantLock;
-
-import org.andengine.opengl.util.BufferUtils;
-import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 
 /**
  * Compared to {@link ZeroMemoryVertexBufferObject}, all {@link SharedMemoryVertexBufferObject}s share a single {@link ByteBuffer} which is used by whichever {@link SharedMemoryVertexBufferObject} instance is currently buffering data,

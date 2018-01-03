@@ -1,6 +1,6 @@
 package org.andengine.entity.scene.menu;
 
-import java.util.ArrayList;
+import android.view.MotionEvent;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.CameraScene;
@@ -13,7 +13,7 @@ import org.andengine.entity.scene.menu.animator.InstantMenuSceneAnimator;
 import org.andengine.entity.scene.menu.item.IMenuItem;
 import org.andengine.input.touch.TouchEvent;
 
-import android.view.MotionEvent;
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

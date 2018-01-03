@@ -1,8 +1,5 @@
 package org.andengine.ui.dialog;
 
-import org.andengine.util.call.Callback;
-import org.andengine.util.debug.Debug;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -11,6 +8,9 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.andengine.util.call.Callback;
+import org.andengine.util.debug.Debug;
 
 /**
  * (c) 2010 Nicolas Gramlich

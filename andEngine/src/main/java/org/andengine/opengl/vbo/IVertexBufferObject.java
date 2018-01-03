@@ -1,10 +1,10 @@
 package org.andengine.opengl.vbo;
 
-import java.nio.ByteBuffer;
-
 import org.andengine.opengl.shader.ShaderProgram;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.IDisposable;
+
+import java.nio.ByteBuffer;
 
 /**
  * (c) 2011 Zynga Inc.

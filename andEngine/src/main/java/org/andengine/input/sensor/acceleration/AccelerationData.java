@@ -1,11 +1,11 @@
 package org.andengine.input.sensor.acceleration;
 
-import java.util.Arrays;
+import android.hardware.SensorManager;
+import android.view.Surface;
 
 import org.andengine.input.sensor.BaseSensorData;
 
-import android.hardware.SensorManager;
-import android.view.Surface;
+import java.util.Arrays;
 
 /**
  * (c) 2010 Nicolas Gramlich

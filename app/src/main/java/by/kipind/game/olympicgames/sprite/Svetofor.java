@@ -1,6 +1,9 @@
 package by.kipind.game.olympicgames.sprite;
 
-import java.util.Arrays;
+import android.graphics.Color;
+
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.sprite.AnimatedSprite;
@@ -10,11 +13,9 @@ import org.andengine.extension.physics.box2d.PhysicsWorld;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 
-import android.graphics.Color;
-import by.kipind.game.olympicgames.ResourcesManager;
+import java.util.Arrays;
 
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
+import by.kipind.game.olympicgames.ResourcesManager;
 
 public class Svetofor extends AnimatedSprite {
     final String LOG_TAG = "myLogs";

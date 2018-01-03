@@ -1,14 +1,14 @@
 package org.andengine.opengl.font;
 
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
+
 import org.andengine.opengl.texture.EmptyTexture;
 import org.andengine.opengl.texture.ITexture;
 import org.andengine.opengl.texture.PixelFormat;
 import org.andengine.opengl.texture.TextureManager;
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.util.adt.color.Color;
-
-import android.content.res.AssetManager;
-import android.graphics.Typeface;
 
 /**
  * (c) 2010 Nicolas Gramlich

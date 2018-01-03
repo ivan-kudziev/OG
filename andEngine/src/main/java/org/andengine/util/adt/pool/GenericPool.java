@@ -1,10 +1,10 @@
 package org.andengine.util.adt.pool;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 import org.andengine.BuildConfig;
 import org.andengine.util.debug.Debug;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * (c) 2010 Nicolas Gramlich

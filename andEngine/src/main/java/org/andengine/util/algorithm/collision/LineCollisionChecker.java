@@ -1,9 +1,9 @@
 package org.andengine.util.algorithm.collision;
 
+import org.andengine.entity.primitive.Line;
+
 import static org.andengine.util.Constants.VERTEX_INDEX_X;
 import static org.andengine.util.Constants.VERTEX_INDEX_Y;
-
-import org.andengine.entity.primitive.Line;
 
 /**
  * (c) 2010 Nicolas Gramlich

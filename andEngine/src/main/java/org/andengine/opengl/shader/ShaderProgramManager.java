@@ -1,8 +1,8 @@
 package org.andengine.opengl.shader;
 
-import java.util.ArrayList;
-
 import org.andengine.util.debug.Debug;
+
+import java.util.ArrayList;
 
 
 /**

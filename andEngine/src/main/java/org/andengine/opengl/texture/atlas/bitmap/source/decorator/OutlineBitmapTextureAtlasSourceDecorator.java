@@ -1,9 +1,9 @@
 package org.andengine.opengl.texture.atlas.bitmap.source.decorator;
 
+import android.graphics.Paint.Style;
+
 import org.andengine.opengl.texture.atlas.bitmap.source.IBitmapTextureAtlasSource;
 import org.andengine.opengl.texture.atlas.bitmap.source.decorator.shape.IBitmapTextureAtlasSourceDecoratorShape;
-
-import android.graphics.Paint.Style;
 
 /**
  * (c) 2010 Nicolas Gramlich

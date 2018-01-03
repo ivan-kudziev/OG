@@ -1,8 +1,8 @@
 package org.andengine.opengl.util;
 
-import org.andengine.util.exception.AndEngineRuntimeException;
-
 import android.opengl.GLES20;
+
+import org.andengine.util.exception.AndEngineRuntimeException;
 
 /**
  * TODO Measure performance against regular Java Stack<E>

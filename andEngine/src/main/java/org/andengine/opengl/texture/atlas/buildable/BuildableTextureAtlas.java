@@ -1,8 +1,5 @@
 package org.andengine.opengl.texture.atlas.buildable;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import org.andengine.opengl.texture.ITextureStateListener;
 import org.andengine.opengl.texture.PixelFormat;
 import org.andengine.opengl.texture.TextureOptions;
@@ -13,6 +10,9 @@ import org.andengine.opengl.texture.atlas.buildable.builder.ITextureAtlasBuilder
 import org.andengine.opengl.texture.atlas.source.ITextureAtlasSource;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.call.Callback;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

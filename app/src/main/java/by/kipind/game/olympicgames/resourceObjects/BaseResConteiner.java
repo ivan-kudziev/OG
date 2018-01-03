@@ -1,12 +1,12 @@
 package by.kipind.game.olympicgames.resourceObjects;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.ui.activity.BaseGameActivity;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class BaseResConteiner {
 

@@ -1,8 +1,8 @@
 package org.andengine.extension.physics.box2d.util.triangulation;
 
-import java.util.List;
-
 import com.badlogic.gdx.math.Vector2;
+
+import java.util.List;
 
 /**
  * (c) 2010 Nicolas Gramlich

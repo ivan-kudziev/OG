@@ -1,12 +1,12 @@
 package org.andengine.entity.scene.background;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.color.Color;
 import org.andengine.util.modifier.IModifier;
 import org.andengine.util.modifier.ModifierList;
-
-import android.opengl.GLES20;
 
 
 /**

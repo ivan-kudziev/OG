@@ -1,11 +1,11 @@
 package org.andengine.opengl.texture.atlas.bitmap.source.decorator;
 
-import org.andengine.opengl.texture.atlas.bitmap.source.IBitmapTextureAtlasSource;
-import org.andengine.opengl.texture.atlas.bitmap.source.decorator.shape.IBitmapTextureAtlasSourceDecoratorShape;
-
 import android.graphics.LinearGradient;
 import android.graphics.Paint.Style;
 import android.graphics.Shader.TileMode;
+
+import org.andengine.opengl.texture.atlas.bitmap.source.IBitmapTextureAtlasSource;
+import org.andengine.opengl.texture.atlas.bitmap.source.decorator.shape.IBitmapTextureAtlasSourceDecoratorShape;
 
 /**
  * (c) 2010 Nicolas Gramlich

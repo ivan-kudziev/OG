@@ -1,13 +1,13 @@
 package org.andengine.input.touch.detector;
 
+import android.speech.tts.TextToSpeech.Engine;
+import android.view.MotionEvent;
+
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.engine.handler.timer.ITimerCallback;
 import org.andengine.engine.handler.timer.TimerHandler;
 import org.andengine.entity.scene.Scene;
 import org.andengine.input.touch.TouchEvent;
-
-import android.speech.tts.TextToSpeech.Engine;
-import android.view.MotionEvent;
 
 /**
  * Note: Needs to be registered as an {@link IUpdateHandler} to the {@link Engine} or {@link Scene} to work properly.

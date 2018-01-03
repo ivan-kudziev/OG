@@ -1,5 +1,13 @@
 package org.andengine.util.preferences;
 
+import android.annotation.TargetApi;
+import android.content.SharedPreferences;
+import android.os.Build;
+import android.util.Base64;
+
+import org.andengine.util.exception.MethodNotYetImplementedException;
+import org.andengine.util.preferences.exception.SecureSharedPreferencesException;
+
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
@@ -13,14 +21,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-
-import org.andengine.util.exception.MethodNotYetImplementedException;
-import org.andengine.util.preferences.exception.SecureSharedPreferencesException;
-
-import android.annotation.TargetApi;
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.util.Base64;
 
 /**
  * (c) 2013 Nicolas Gramlich

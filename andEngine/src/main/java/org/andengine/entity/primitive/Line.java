@@ -1,5 +1,7 @@
 package org.andengine.entity.primitive;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.IEntity;
 import org.andengine.entity.primitive.vbo.HighPerformanceLineVertexBufferObject;
@@ -15,8 +17,6 @@ import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributesBuilder;
 import org.andengine.util.algorithm.collision.LineCollisionChecker;
 import org.andengine.util.exception.MethodNotSupportedException;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2010 Nicolas Gramlich

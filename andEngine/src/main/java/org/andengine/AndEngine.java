@@ -1,8 +1,9 @@
 package org.andengine;
 
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.pm.ConfigurationInfo;
+import android.os.Build;
 
 import org.andengine.engine.options.ConfigChooserOptions;
 import org.andengine.opengl.view.ConfigChooser;
@@ -10,10 +11,9 @@ import org.andengine.util.exception.DeviceNotSupportedException;
 import org.andengine.util.exception.DeviceNotSupportedException.DeviceNotSupportedCause;
 import org.andengine.util.system.SystemUtils;
 
-import android.app.ActivityManager;
-import android.content.Context;
-import android.content.pm.ConfigurationInfo;
-import android.os.Build;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
 
 /**
  * (c) 2012 Zynga Inc.

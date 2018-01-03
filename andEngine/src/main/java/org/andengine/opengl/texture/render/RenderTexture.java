@@ -1,7 +1,8 @@
 package org.andengine.opengl.texture.render;
 
-import java.io.IOException;
-import java.nio.IntBuffer;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.opengl.GLES20;
 
 import org.andengine.opengl.exception.GLException;
 import org.andengine.opengl.exception.GLFrameBufferException;
@@ -15,9 +16,8 @@ import org.andengine.opengl.util.GLHelper;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.color.Color;
 
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.opengl.GLES20;
+import java.io.IOException;
+import java.nio.IntBuffer;
 
 /**
  * The general workflow with a {@link RenderTexture} is: {@link #init(GLState)} -> {@link #begin(GLState)} -> {@link #end(GLState)} -> {@link #destroy(GLState)}.

@@ -1,16 +1,16 @@
 package org.andengine.ui.activity;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.widget.Toast;
+
 import org.andengine.util.ActivityUtils;
 import org.andengine.util.DialogUtils;
 import org.andengine.util.call.AsyncCallable;
 import org.andengine.util.call.Callable;
 import org.andengine.util.call.Callback;
 import org.andengine.util.progress.ProgressCallable;
-
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.widget.Toast;
 
 /**
  * (c) 2010 Nicolas Gramlich

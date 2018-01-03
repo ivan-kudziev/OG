@@ -1,7 +1,11 @@
 package org.andengine.opengl.texture.atlas.bitmap.source;
 
-import java.io.IOException;
-import java.io.InputStream;
+import android.annotation.TargetApi;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 
 import org.andengine.opengl.texture.atlas.source.BaseTextureAtlasSource;
 import org.andengine.util.BitmapUtils;
@@ -9,12 +13,8 @@ import org.andengine.util.StreamUtils;
 import org.andengine.util.debug.Debug;
 import org.andengine.util.system.SystemUtils;
 
-import android.annotation.TargetApi;
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.BitmapFactory;
-import android.os.Build;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * (c) 2010 Nicolas Gramlich

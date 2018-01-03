@@ -1,12 +1,12 @@
 package org.andengine.util;
 
-import java.util.List;
-
-import org.andengine.util.exception.AndEngineException;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+
+import org.andengine.util.exception.AndEngineException;
+
+import java.util.List;
 
 /**
  * (c) 2013 Nicolas Gramlich

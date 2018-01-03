@@ -1,9 +1,5 @@
 package org.andengine.entity;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.IDrawHandler;
@@ -16,6 +12,10 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.util.IDisposable;
 import org.andengine.util.adt.color.Color;
 import org.andengine.util.adt.transformation.Transformation;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 
 /**

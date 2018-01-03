@@ -1,10 +1,10 @@
 package org.andengine.util.adt.list;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.andengine.util.IMatcher;
 import org.andengine.util.call.ParameterCallable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * (c) 2010 Nicolas Gramlich

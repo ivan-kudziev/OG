@@ -1,18 +1,5 @@
 package org.andengine.util;
 
-import java.lang.reflect.Method;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.net.UnknownHostException;
-import java.util.Arrays;
-import java.util.Enumeration;
-
-import org.andengine.util.adt.array.ArrayUtils;
-import org.andengine.util.exception.AndEngineException;
-import org.andengine.util.exception.MethodNotFoundException;
-import org.andengine.util.system.SystemUtils;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.net.DhcpInfo;
@@ -20,6 +7,19 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.MulticastLock;
 import android.os.Build;
+
+import org.andengine.util.adt.array.ArrayUtils;
+import org.andengine.util.exception.AndEngineException;
+import org.andengine.util.exception.MethodNotFoundException;
+import org.andengine.util.system.SystemUtils;
+
+import java.lang.reflect.Method;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+import java.util.Enumeration;
 
 /**
  * (c) 2010 Nicolas Gramlich

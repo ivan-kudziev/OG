@@ -1,8 +1,8 @@
 package org.andengine.extension.physics.box2d.util.hull;
 
-import org.andengine.extension.physics.box2d.util.Vector2Pool;
-
 import com.badlogic.gdx.math.Vector2;
+
+import org.andengine.extension.physics.box2d.util.Vector2Pool;
 
 /**
  * (c) 2010 Nicolas Gramlich

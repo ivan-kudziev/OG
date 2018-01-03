@@ -1,7 +1,5 @@
 package org.andengine.entity.sprite.vbo;
 
-import java.nio.FloatBuffer;
-
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.sprite.TiledSprite;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -9,6 +7,8 @@ import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.DrawType;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
+
+import java.nio.FloatBuffer;
 
 /**
  * (c) 2012 Zynga Inc.

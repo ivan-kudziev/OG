@@ -1,11 +1,11 @@
 package org.andengine.entity.scene.background;
 
-import java.util.ArrayList;
-
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.IEntity;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.debug.Debug;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

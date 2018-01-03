@@ -1,11 +1,11 @@
 package org.andengine.opengl.font;
 
-import org.andengine.opengl.texture.ITexture;
-import org.andengine.util.adt.color.Color;
-
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Typeface;
+
+import org.andengine.opengl.texture.ITexture;
+import org.andengine.util.adt.color.Color;
 
 /**
  * TODO Re-implement with Font changes.

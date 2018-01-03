@@ -1,8 +1,8 @@
 package org.andengine.util.adt.cache;
 
-import java.util.HashMap;
-
 import org.andengine.util.adt.pool.GenericPool;
+
+import java.util.HashMap;
 
 /**
  * (c) 2011 Zynga Inc.

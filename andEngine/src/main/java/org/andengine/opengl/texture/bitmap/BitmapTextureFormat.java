@@ -1,8 +1,8 @@
 package org.andengine.opengl.texture.bitmap;
 
-import org.andengine.opengl.texture.PixelFormat;
-
 import android.graphics.Bitmap.Config;
+
+import org.andengine.opengl.texture.PixelFormat;
 
 /**
  * (c) 2012 Zynga Inc.

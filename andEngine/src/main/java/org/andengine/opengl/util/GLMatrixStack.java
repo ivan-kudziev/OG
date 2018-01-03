@@ -1,9 +1,9 @@
 package org.andengine.opengl.util;
 
+import android.opengl.Matrix;
+
 import org.andengine.util.exception.AndEngineRuntimeException;
 import org.andengine.util.math.MathConstants;
-
-import android.opengl.Matrix;
 
 /**
  * TODO Measure performance with inlined or native Matrix implementations.

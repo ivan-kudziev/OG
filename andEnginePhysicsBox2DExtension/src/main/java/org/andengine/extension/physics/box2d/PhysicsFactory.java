@@ -1,16 +1,6 @@
 package org.andengine.extension.physics.box2d;
 
 
-import static org.andengine.extension.physics.box2d.util.constants.PhysicsConstants.PIXEL_TO_METER_RATIO_DEFAULT;
-
-import java.util.List;
-
-import org.andengine.entity.IEntity;
-import org.andengine.entity.primitive.Line;
-import org.andengine.extension.physics.box2d.util.constants.PhysicsConstants;
-import org.andengine.util.Constants;
-import org.andengine.util.math.MathUtils;
-
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -20,6 +10,16 @@ import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+
+import org.andengine.entity.IEntity;
+import org.andengine.entity.primitive.Line;
+import org.andengine.extension.physics.box2d.util.constants.PhysicsConstants;
+import org.andengine.util.Constants;
+import org.andengine.util.math.MathUtils;
+
+import java.util.List;
+
+import static org.andengine.extension.physics.box2d.util.constants.PhysicsConstants.PIXEL_TO_METER_RATIO_DEFAULT;
 
 /**
  * (c) 2010 Nicolas Gramlich

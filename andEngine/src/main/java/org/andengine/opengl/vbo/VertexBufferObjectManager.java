@@ -1,8 +1,8 @@
 package org.andengine.opengl.vbo;
 
-import java.util.ArrayList;
-
 import org.andengine.opengl.util.GLState;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

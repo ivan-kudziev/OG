@@ -1,13 +1,14 @@
 package by.kipind.game.olympicgames.sceneElements;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.graphics.PointF;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 
-import android.graphics.PointF;
+import java.util.ArrayList;
+import java.util.List;
+
 import by.kipind.game.olympicgames.ResourcesManager;
 
 public class DartTarget extends Entity {

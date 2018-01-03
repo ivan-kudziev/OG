@@ -1,7 +1,8 @@
 package by.kipind.game.olympicgames.sceneElements;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.graphics.PointF;
+import android.os.AsyncTask;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.camera.hud.HUD;
@@ -19,10 +20,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.os.AsyncTask;
-import android.util.Log;
+import java.util.ArrayList;
+import java.util.List;
+
 import by.kipind.game.UtilObjects.LeaderboardItem;
 import by.kipind.game.line.JSONParser;
 import by.kipind.game.olympicgames.GameSettings;

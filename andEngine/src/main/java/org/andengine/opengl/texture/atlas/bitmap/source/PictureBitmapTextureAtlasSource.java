@@ -1,12 +1,12 @@
 package org.andengine.opengl.texture.atlas.bitmap.source;
 
-import org.andengine.opengl.texture.atlas.source.BaseTextureAtlasSource;
-import org.andengine.util.debug.Debug;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Picture;
+
+import org.andengine.opengl.texture.atlas.source.BaseTextureAtlasSource;
+import org.andengine.util.debug.Debug;
 
 /**
  * (c) 2010 Nicolas Gramlich

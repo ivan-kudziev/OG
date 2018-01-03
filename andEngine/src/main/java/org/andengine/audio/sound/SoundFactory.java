@@ -1,11 +1,11 @@
 package org.andengine.audio.sound;
 
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.IOException;
-
-import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 
 /**
  * (c) 2010 Nicolas Gramlich

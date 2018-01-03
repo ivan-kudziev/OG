@@ -1,11 +1,11 @@
 package org.andengine.opengl;
 
-import org.andengine.util.exception.AndEngineRuntimeException;
-import org.andengine.util.system.SystemUtils;
-
 import android.annotation.TargetApi;
 import android.opengl.GLES20;
 import android.os.Build;
+
+import org.andengine.util.exception.AndEngineRuntimeException;
+import org.andengine.util.system.SystemUtils;
 
 /**
  * (c) 2011 Zynga Inc.

@@ -2,6 +2,7 @@ package by.kipind.game.utils;
 
 import android.content.Intent;
 import android.net.Uri;
+
 import by.kipind.game.olympicgames.ResourcesManager;
 
 public class FallowWebLink {

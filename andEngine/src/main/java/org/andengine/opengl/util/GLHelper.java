@@ -1,14 +1,14 @@
 package org.andengine.opengl.util;
 
+import android.graphics.Bitmap;
+
+import org.andengine.opengl.texture.PixelFormat;
+
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
-
-import org.andengine.opengl.texture.PixelFormat;
-
-import android.graphics.Bitmap;
 
 /**
  * (c) 2010 Nicolas Gramlich

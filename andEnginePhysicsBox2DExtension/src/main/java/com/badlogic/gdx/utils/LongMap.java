@@ -15,10 +15,10 @@
  ******************************************************************************/
 package com.badlogic.gdx.utils;
 
+import org.andengine.util.math.MathUtils;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
-import org.andengine.util.math.MathUtils;
 
 /**
  * An unordered map that uses long keys. This implementation is a cuckoo hash map using 3 hashes, random walking, and a small

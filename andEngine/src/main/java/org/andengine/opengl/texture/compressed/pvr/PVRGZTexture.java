@@ -1,12 +1,12 @@
 package org.andengine.opengl.texture.compressed.pvr;
 
-import java.io.IOException;
-import java.util.zip.GZIPInputStream;
-
 import org.andengine.opengl.texture.ITextureStateListener;
 import org.andengine.opengl.texture.TextureManager;
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.texture.compressed.pvr.pixelbufferstrategy.IPVRTexturePixelBufferStrategy;
+
+import java.io.IOException;
+import java.util.zip.GZIPInputStream;
 
 /**
  * (c) 2010 Nicolas Gramlich

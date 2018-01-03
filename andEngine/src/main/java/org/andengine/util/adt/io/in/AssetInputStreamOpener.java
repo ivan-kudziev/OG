@@ -1,9 +1,9 @@
 package org.andengine.util.adt.io.in;
 
+import android.content.res.AssetManager;
+
 import java.io.IOException;
 import java.io.InputStream;
-
-import android.content.res.AssetManager;
 
 /**
  * (c) 2012 Zynga Inc.

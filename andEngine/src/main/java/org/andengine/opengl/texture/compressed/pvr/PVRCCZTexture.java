@@ -1,5 +1,12 @@
 package org.andengine.opengl.texture.compressed.pvr;
 
+import org.andengine.opengl.texture.ITextureStateListener;
+import org.andengine.opengl.texture.TextureManager;
+import org.andengine.opengl.texture.TextureOptions;
+import org.andengine.opengl.texture.compressed.pvr.pixelbufferstrategy.IPVRTexturePixelBufferStrategy;
+import org.andengine.util.StreamUtils;
+import org.andengine.util.adt.array.ArrayUtils;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -7,13 +14,6 @@ import java.nio.ByteOrder;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
-
-import org.andengine.opengl.texture.ITextureStateListener;
-import org.andengine.opengl.texture.TextureManager;
-import org.andengine.opengl.texture.TextureOptions;
-import org.andengine.opengl.texture.compressed.pvr.pixelbufferstrategy.IPVRTexturePixelBufferStrategy;
-import org.andengine.util.StreamUtils;
-import org.andengine.util.adt.array.ArrayUtils;
 
 /**
  * (c) 2010 Nicolas Gramlich

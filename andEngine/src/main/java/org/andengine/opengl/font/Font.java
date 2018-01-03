@@ -1,15 +1,5 @@
 package org.andengine.opengl.font;
 
-import java.util.ArrayList;
-
-import org.andengine.opengl.font.exception.FontException;
-import org.andengine.opengl.texture.ITexture;
-import org.andengine.opengl.texture.PixelFormat;
-import org.andengine.opengl.util.GLState;
-import org.andengine.util.adt.color.Color;
-import org.andengine.util.adt.map.SparseArrayUtils;
-import org.andengine.util.math.MathUtils;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -21,6 +11,16 @@ import android.graphics.Typeface;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.util.SparseArray;
+
+import org.andengine.opengl.font.exception.FontException;
+import org.andengine.opengl.texture.ITexture;
+import org.andengine.opengl.texture.PixelFormat;
+import org.andengine.opengl.util.GLState;
+import org.andengine.util.adt.color.Color;
+import org.andengine.util.adt.map.SparseArrayUtils;
+import org.andengine.util.math.MathUtils;
+
+import java.util.ArrayList;
 
 /**
  * (c) 2010 Nicolas Gramlich

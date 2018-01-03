@@ -1,8 +1,8 @@
 package org.andengine.util.adt.map;
 
-import org.andengine.util.adt.array.ArrayUtils;
-
 import android.util.Log;
+
+import org.andengine.util.adt.array.ArrayUtils;
 
 /*
  * Copyright (C) 2009 The Android Open Source Project

@@ -1,6 +1,6 @@
 package org.andengine.util.animationpack;
 
-import java.util.ArrayList;
+import android.content.res.AssetManager;
 
 import org.andengine.entity.sprite.IAnimationData;
 import org.andengine.opengl.texture.TextureManager;
@@ -15,7 +15,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import android.content.res.AssetManager;
+import java.util.ArrayList;
 
 /**
  * (c) 2011 Zynga Inc.

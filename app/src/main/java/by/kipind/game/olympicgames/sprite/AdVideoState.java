@@ -1,14 +1,15 @@
 package by.kipind.game.olympicgames.sprite;
 
+import android.graphics.Color;
+
+import com.badlogic.gdx.physics.box2d.Body;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 
-import android.graphics.Color;
 import by.kipind.game.olympicgames.ResourcesManager;
-
-import com.badlogic.gdx.physics.box2d.Body;
 
 public class AdVideoState extends AnimatedSprite {
     final String LOG_TAG = "myLogs";

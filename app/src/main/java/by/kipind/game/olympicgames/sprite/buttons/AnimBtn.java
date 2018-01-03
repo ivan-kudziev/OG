@@ -1,12 +1,12 @@
 package by.kipind.game.olympicgames.sprite.buttons;
 
+import android.view.MotionEvent;
+
 import org.andengine.entity.scene.IOnAreaTouchListener;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
-
-import android.view.MotionEvent;
 
 public abstract class AnimBtn extends AnimatedSprite implements IOnAreaTouchListener {
    public static int BTN_STATE_FREE = 0;

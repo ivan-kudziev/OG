@@ -1,8 +1,8 @@
 package org.andengine.util.texturepack;
 
-import java.util.HashMap;
-
 import android.util.SparseArray;
+
+import java.util.HashMap;
 
 /**
  * (c) 2011 Zynga Inc.

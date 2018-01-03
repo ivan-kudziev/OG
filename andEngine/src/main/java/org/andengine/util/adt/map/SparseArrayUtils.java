@@ -1,6 +1,8 @@
 package org.andengine.util.adt.map;
 
-import java.util.ArrayList;
+import android.util.SparseArray;
+import android.util.SparseBooleanArray;
+import android.util.SparseIntArray;
 
 import org.andengine.util.adt.list.BooleanArrayList;
 import org.andengine.util.adt.list.ByteArrayList;
@@ -10,9 +12,7 @@ import org.andengine.util.adt.list.FloatArrayList;
 import org.andengine.util.adt.list.IntArrayList;
 import org.andengine.util.adt.list.LongArrayList;
 
-import android.util.SparseArray;
-import android.util.SparseBooleanArray;
-import android.util.SparseIntArray;
+import java.util.ArrayList;
 
 /**
  * (c) 2012 Zynga Inc.

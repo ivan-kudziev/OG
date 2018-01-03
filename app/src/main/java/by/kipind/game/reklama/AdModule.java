@@ -1,9 +1,10 @@
 package by.kipind.game.reklama;
 
+import android.content.Intent;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Intent;
 import by.kipind.game.olympicgames.GameSettings;
 import by.kipind.game.olympicgames.ResourcesManager;
 

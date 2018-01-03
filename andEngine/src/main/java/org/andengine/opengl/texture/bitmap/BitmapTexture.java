@@ -1,7 +1,10 @@
 package org.andengine.opengl.texture.bitmap;
 
-import java.io.IOException;
-import java.io.InputStream;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
 
 import org.andengine.opengl.texture.ITextureStateListener;
 import org.andengine.opengl.texture.PixelFormat;
@@ -14,11 +17,8 @@ import org.andengine.util.adt.io.in.IInputStreamOpener;
 import org.andengine.util.exception.NullBitmapException;
 import org.andengine.util.math.MathUtils;
 
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.BitmapFactory;
-import android.opengl.GLES20;
-import android.opengl.GLUtils;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * (c) 2011 Zynga Inc.

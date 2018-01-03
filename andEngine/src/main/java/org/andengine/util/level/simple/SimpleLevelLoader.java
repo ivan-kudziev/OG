@@ -1,11 +1,11 @@
 package org.andengine.util.level.simple;
 
-import java.util.HashMap;
-
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.util.level.IEntityLoader;
 import org.andengine.util.level.IEntityLoaderListener;
 import org.andengine.util.level.LevelLoader;
+
+import java.util.HashMap;
 
 /**
  * (c) 2012 Zynga Inc.

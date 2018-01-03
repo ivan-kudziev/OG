@@ -1,8 +1,8 @@
 package org.andengine.entity.particle.initializer;
 
-import org.andengine.entity.IEntity;
-
 import android.hardware.SensorManager;
+
+import org.andengine.entity.IEntity;
 
 /**
  * (c) 2010 Nicolas Gramlich

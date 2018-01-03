@@ -1,11 +1,11 @@
 package org.andengine.opengl.vbo.attribute;
 
+import android.opengl.GLES20;
+import android.os.Build;
+
 import org.andengine.util.adt.data.constants.DataConstants;
 import org.andengine.util.exception.AndEngineRuntimeException;
 import org.andengine.util.system.SystemUtils;
-
-import android.opengl.GLES20;
-import android.os.Build;
 
 /**
  * (c) 2011 Zynga Inc.

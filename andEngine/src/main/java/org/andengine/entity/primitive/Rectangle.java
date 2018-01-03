@@ -1,5 +1,7 @@
 package org.andengine.entity.primitive;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.primitive.vbo.HighPerformanceRectangleVertexBufferObject;
 import org.andengine.entity.primitive.vbo.IRectangleVertexBufferObject;
@@ -12,8 +14,6 @@ import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttribute;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributesBuilder;
-
-import android.opengl.GLES20;
 
 /**
  * (c) 2010 Nicolas Gramlich

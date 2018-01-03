@@ -1,11 +1,11 @@
 package by.kipind.game.olympicgames.sceneElements;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.andengine.entity.Entity;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import by.kipind.game.olympicgames.ResourcesManager;
 

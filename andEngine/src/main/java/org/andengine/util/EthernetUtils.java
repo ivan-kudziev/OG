@@ -1,16 +1,16 @@
 package org.andengine.util;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
+import org.andengine.util.exception.AndEngineException;
+import org.andengine.util.system.SystemUtils;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
-
-import org.andengine.util.exception.AndEngineException;
-import org.andengine.util.system.SystemUtils;
-
-import android.annotation.TargetApi;
-import android.os.Build;
 
 /**
  * (c) 2013 Nicolas Gramlich

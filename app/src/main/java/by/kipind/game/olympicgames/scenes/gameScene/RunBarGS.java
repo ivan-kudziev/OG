@@ -1,6 +1,17 @@
 package by.kipind.game.olympicgames.scenes.gameScene;
 
-import java.io.IOException;
+import android.graphics.Color;
+import android.view.MotionEvent;
+
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.ContactImpulse;
+import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.Manifold;
 
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.timer.ITimerCallback;
@@ -25,9 +36,8 @@ import org.andengine.util.level.simple.SimpleLevelEntityLoaderData;
 import org.andengine.util.level.simple.SimpleLevelLoader;
 import org.xml.sax.Attributes;
 
-import android.graphics.Color;
-import android.util.Log;
-import android.view.MotionEvent;
+import java.io.IOException;
+
 import by.kipind.game.olympicgames.GameSettings;
 import by.kipind.game.olympicgames.R;
 import by.kipind.game.olympicgames.ResourcesManager;
@@ -43,16 +53,6 @@ import by.kipind.game.olympicgames.sprite.Svetofor;
 import by.kipind.game.olympicgames.sprite.buttons.AnimBtn;
 import by.kipind.game.olympicgames.sprite.buttons.BtnRun;
 import by.kipind.game.utils.FallowWebLink;
-
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
-import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.ContactImpulse;
-import com.badlogic.gdx.physics.box2d.ContactListener;
-import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.Manifold;
 
 public class RunBarGS extends BaseScene implements IOnSceneTouchListener {
     private static final String GAME_TYPE = "RUN_BARIER";

@@ -1,11 +1,11 @@
 package org.andengine.opengl.util;
 
-import java.nio.ByteBuffer;
+import android.os.Build;
 
 import org.andengine.util.debug.Debug;
 import org.andengine.util.system.SystemUtils;
 
-import android.os.Build;
+import java.nio.ByteBuffer;
 
 /**
  * (c) 2011 Zynga Inc.

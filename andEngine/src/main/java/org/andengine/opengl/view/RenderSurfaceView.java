@@ -1,12 +1,12 @@
 package org.andengine.opengl.view;
 
-import org.andengine.engine.Engine;
-import org.andengine.engine.options.ConfigChooserOptions;
-import org.andengine.engine.options.resolutionpolicy.IResolutionPolicy;
-
 import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.util.AttributeSet;
+
+import org.andengine.engine.Engine;
+import org.andengine.engine.options.ConfigChooserOptions;
+import org.andengine.engine.options.resolutionpolicy.IResolutionPolicy;
 
 /**
  * (c) 2010 Nicolas Gramlich

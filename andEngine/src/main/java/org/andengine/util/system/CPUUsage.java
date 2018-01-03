@@ -1,13 +1,13 @@
 package org.andengine.util.system;
 
+import org.andengine.util.StreamUtils;
+import org.andengine.util.TextUtils;
+import org.andengine.util.debug.Debug;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import org.andengine.util.StreamUtils;
-import org.andengine.util.TextUtils;
-import org.andengine.util.debug.Debug;
 
 /**
  * (c) 2011 Zynga Inc.

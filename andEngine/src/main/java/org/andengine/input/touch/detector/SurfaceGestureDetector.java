@@ -1,11 +1,11 @@
 package org.andengine.input.touch.detector;
 
-import org.andengine.input.touch.TouchEvent;
-
 import android.content.Context;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
+
+import org.andengine.input.touch.TouchEvent;
 
 /**
  * @author rkpost

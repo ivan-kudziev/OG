@@ -1,9 +1,9 @@
 package org.andengine.opengl.texture.atlas.bitmap.source.decorator.shape;
 
-import org.andengine.opengl.texture.atlas.bitmap.source.decorator.BaseBitmapTextureAtlasSourceDecorator.TextureAtlasSourceDecoratorOptions;
-
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
+import org.andengine.opengl.texture.atlas.bitmap.source.decorator.BaseBitmapTextureAtlasSourceDecorator.TextureAtlasSourceDecoratorOptions;
 
 public class RectangleBitmapTextureAtlasSourceDecoratorShape implements IBitmapTextureAtlasSourceDecoratorShape {
 	// ===========================================================

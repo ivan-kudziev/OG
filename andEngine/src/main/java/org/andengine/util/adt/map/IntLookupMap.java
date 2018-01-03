@@ -1,8 +1,8 @@
 package org.andengine.util.adt.map;
 
-import java.util.HashMap;
-
 import android.util.SparseArray;
+
+import java.util.HashMap;
 
 /**
  * (c) 2012 Zynga Inc.

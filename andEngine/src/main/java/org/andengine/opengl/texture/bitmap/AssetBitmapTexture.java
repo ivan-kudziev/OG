@@ -1,13 +1,13 @@
 package org.andengine.opengl.texture.bitmap;
 
-import java.io.IOException;
+import android.content.res.AssetManager;
 
 import org.andengine.opengl.texture.ITextureStateListener;
 import org.andengine.opengl.texture.TextureManager;
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.util.adt.io.in.AssetInputStreamOpener;
 
-import android.content.res.AssetManager;
+import java.io.IOException;
 
 /**
  * (c) 2012 Zynga Inc.

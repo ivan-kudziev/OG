@@ -1,9 +1,9 @@
 package org.andengine.util.level;
 
-import java.io.IOException;
-
 import org.andengine.entity.IEntity;
 import org.xml.sax.Attributes;
+
+import java.io.IOException;
 
 /**
  * (c) 2012 Zynga Inc.

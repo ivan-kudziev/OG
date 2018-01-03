@@ -1,9 +1,9 @@
 package org.andengine.util.algorithm.sort;
 
+import org.andengine.util.adt.list.IList;
+
 import java.util.Comparator;
 import java.util.List;
-
-import org.andengine.util.adt.list.IList;
 
 /**
  * (c) 2010 Nicolas Gramlich

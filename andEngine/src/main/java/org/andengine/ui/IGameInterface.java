@@ -1,10 +1,10 @@
 package org.andengine.ui;
 
-import java.io.IOException;
-
 import org.andengine.engine.Engine;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.entity.scene.Scene;
+
+import java.io.IOException;
 
 /**
  * (c) 2010 Nicolas Gramlich

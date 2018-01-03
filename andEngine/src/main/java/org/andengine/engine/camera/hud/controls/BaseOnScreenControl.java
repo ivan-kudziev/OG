@@ -1,5 +1,7 @@
 package org.andengine.engine.camera.hud.controls;
 
+import android.view.MotionEvent;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.timer.ITimerCallback;
@@ -11,8 +13,6 @@ import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.util.math.MathUtils;
-
-import android.view.MotionEvent;
 
 /**
  * (c) 2010 Nicolas Gramlich

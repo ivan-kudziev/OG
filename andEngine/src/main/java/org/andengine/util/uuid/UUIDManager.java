@@ -1,12 +1,12 @@
 package org.andengine.util.uuid;
 
-import java.util.UUID;
-
-import org.andengine.util.preferences.SimplePreferences;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+
+import org.andengine.util.preferences.SimplePreferences;
+
+import java.util.UUID;
 
 /**
  * (c) 2013 Nicolas Gramlich

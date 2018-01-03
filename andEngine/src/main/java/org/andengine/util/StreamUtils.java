@@ -1,5 +1,7 @@
 package org.andengine.util;
 
+import org.andengine.util.debug.Debug;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
@@ -12,8 +14,6 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-
-import org.andengine.util.debug.Debug;
 
 /**
  * (c) 2010 Nicolas Gramlich

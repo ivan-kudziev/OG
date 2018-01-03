@@ -1,5 +1,7 @@
 package org.andengine.entity.sprite.batch;
 
+import android.opengl.GLES20;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.IEntity;
 import org.andengine.entity.shape.Shape;
@@ -18,8 +20,6 @@ import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributes;
 import org.andengine.opengl.vbo.attribute.VertexBufferObjectAttributesBuilder;
 import org.andengine.util.adt.color.ColorUtils;
 import org.andengine.util.adt.transformation.Transformation;
-
-import android.opengl.GLES20;
 
 /**
  * TODO TRY DEGENERATE TRIANGLES!

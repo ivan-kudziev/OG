@@ -1,9 +1,5 @@
 package org.andengine.util;
 
-import java.util.GregorianCalendar;
-
-import org.andengine.util.preferences.SimplePreferences;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -11,6 +7,10 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import org.andengine.util.preferences.SimplePreferences;
+
+import java.util.GregorianCalendar;
 
 
 /**

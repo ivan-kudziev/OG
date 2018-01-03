@@ -1,10 +1,10 @@
 package org.andengine.opengl.texture.atlas.bitmap.source;
 
 
-import org.andengine.opengl.texture.atlas.source.BaseTextureAtlasSource;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+
+import org.andengine.opengl.texture.atlas.source.BaseTextureAtlasSource;
 
 /**
  * (c) 2010 Nicolas Gramlich

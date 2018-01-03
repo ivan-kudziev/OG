@@ -1,10 +1,10 @@
 package org.andengine.opengl.texture.compressed.pvr.pixelbufferstrategy;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-
 import org.andengine.opengl.texture.PixelFormat;
 import org.andengine.opengl.texture.compressed.pvr.PVRTexture;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
 
 /**
  * (c) 2011 Zynga Inc.

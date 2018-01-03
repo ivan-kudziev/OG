@@ -1,13 +1,13 @@
 package org.andengine.util;
 
-import org.andengine.util.exception.AndEngineException;
-import org.andengine.util.system.SystemUtils;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+
+import org.andengine.util.exception.AndEngineException;
+import org.andengine.util.system.SystemUtils;
 
 /**
  * (c) 2013 Nicolas Gramlich

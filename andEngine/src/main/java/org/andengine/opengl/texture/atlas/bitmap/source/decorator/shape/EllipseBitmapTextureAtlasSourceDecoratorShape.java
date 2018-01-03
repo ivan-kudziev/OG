@@ -1,10 +1,10 @@
 package org.andengine.opengl.texture.atlas.bitmap.source.decorator.shape;
 
-import org.andengine.opengl.texture.atlas.bitmap.source.decorator.BaseBitmapTextureAtlasSourceDecorator.TextureAtlasSourceDecoratorOptions;
-
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+
+import org.andengine.opengl.texture.atlas.bitmap.source.decorator.BaseBitmapTextureAtlasSourceDecorator.TextureAtlasSourceDecoratorOptions;
 
 /**
  * (c) 2010 Nicolas Gramlich

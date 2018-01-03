@@ -1,8 +1,8 @@
 package org.andengine.input.touch.controller;
 
-import org.andengine.engine.handler.IUpdateHandler;
-
 import android.view.MotionEvent;
+
+import org.andengine.engine.handler.IUpdateHandler;
 
 /**
  * (c) 2010 Nicolas Gramlich
