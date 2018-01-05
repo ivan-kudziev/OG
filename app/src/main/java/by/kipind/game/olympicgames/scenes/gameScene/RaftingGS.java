@@ -105,11 +105,11 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	private List<Sprite> greenFon;
 	private List<Sprite> water;
+	private List<Sprite> stangi;
 
 	private PhysicsWorld physicsWorld;
 
-	//TODO: new game element boad
-	// private AnimatedSprite player;
+
 
 	private Text scoreText;
 	private Text worldRecLabel;
@@ -118,7 +118,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	private Float wPersonalRecord;
 	private Integer tCounter = 0;
-	private int penalty =0;
+	private int penalty = 0;
 
 	@Override
 	public void createScene() {
@@ -159,14 +159,20 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	private void createBackground() {
 		//final FixtureDef FIXTURE_DEF = PhysicsFactory.createFixtureDef(0, 0.01f, 0.5f);
-		List<Sprite> vorota = new ArrayList<>();
+		List<Sprite> voda = new ArrayList<>();
 
 		greenFon = new ArrayList<>();
 		water = new ArrayList<>();
+		stangi = new ArrayList<>();
 
-		for (int i = 1; i <= 7; i = i + 2) {
+		greenFon.add(new Sprite(400, 1075, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
+		greenFon.add(new Sprite(400, 1225, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
+		greenFon.add(new Sprite(400, 1375, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
+		greenFon.add(new Sprite(400, 1525, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
+
+		/*for (int i = 1; i <= 7; i = i + 2) {
 			greenFon.add(new Sprite(this.lvlWidth / 2f, (this.lvlTotalHeight - this.lvlHeight) + i * this.lvlHeight / 6f, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
-		}
+		}*/
 		for (Sprite sp : greenFon) {
 			attachChild(sp);
 		}
@@ -188,11 +194,14 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			attachChild(water.get(i));
 
 			if (i % 3 == 0) {
-				vorota.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
+				voda.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
 
 				sensors.add(new Sensor(deltaY - water.get(i).getWidth() / 4, 1450 - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
 				sensors.add(new Sensor(deltaY + water.get(i).getWidth() / 4, 1450 - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
-				sensors.add(new Sensor(deltaY, 1450 - deltaX, 1, 1, vbom, physicsWorld, "sens" + String.valueOf(100+i), "kaiak_sensor_gate2"));
+				sensors.add(new Sensor(deltaY, 1450 - deltaX, 1, 1, vbom, physicsWorld, "sens" + String.valueOf(100 + i), "kaiak_sensor_gate2"));
+
+				stangi.add(new Sprite(deltaY - 22, 1450 - deltaX+19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
+				stangi.add(new Sprite(deltaY +22, 1450 - deltaX+19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
 			}
 
 			berega.add(new Sprite(deltaY - water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
@@ -203,7 +212,10 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			attachChild(sp);
 		}
 		for (Sensor sr : sensors) {
-			attachChild(sr);
+			//attachChild(sr);
+		}
+		for (Sprite sp : stangi) {
+			attachChild(sp);
 		}
 
 		attachChild(new Sprite(this.lvlWidth / 4, this.lvlHeight / 2f, resourcesManager.gameGraf.get("shoot_tree"), vbom));
@@ -218,8 +230,8 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 				for (Sprite sp : greenFon) {
 
-					if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2 && camera.getCenterY() > lvlHeight / 2) {
-						sp.setY(camera.getCenterY() - lvlHeight / 2 - sp.getHeight() / 2);
+					if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + 225 && camera.getCenterY() > 225) {
+						sp.setY(camera.getCenterY() - 225 - sp.getHeight() / 2 + 1);
 						break;
 					}
 				}
@@ -234,7 +246,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 						spW.setX((float) (water.get((i == water.size() - 1 ? 0 : i + 1)).getX() + 15 + (-30 * random.nextInt(2) - 1)));
 
 						/*if(i%3==0){
-	                        sensors.get(i).setPosition(spW.getX()-spW.getWidth()/4,1450 - spW.getY());
+		                    sensors.get(i).setPosition(spW.getX()-spW.getWidth()/4,1450 - spW.getY());
 							sensors.get(i+1).setPosition(spW.getX()+spW.getWidth()/4,1450 - spW.getY());
 							sensors.get(i+2).setPosition(spW.getX(),1450 - spW.getY());
 							*//*sensors.add(new Sensor(deltaY-water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
@@ -428,9 +440,9 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 				scoreText.setText(msg);
 */
 				//if (!player.isFinish() && svetofor.getStatus() == Color.GREEN) {
-					tCounter+=1+ penalty;
-					scoreText.setText(String.valueOf((double) tCounter / 1000));
-				penalty =0;
+				tCounter += 1 + penalty;
+				scoreText.setText(String.valueOf((double) tCounter / 1000));
+				penalty = 0;
 				//}
 
 				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed() || bout.getContacts() == 1) {
@@ -465,7 +477,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	}
 
 	private void createPhysics() {
-
+//TODO: repiar gravity -0.2
 		physicsWorld = new FixedStepPhysicsWorld(STEPS_PER_SECOND, new Vector2(0, -0.2f), false);
 		physicsWorld.setContactListener(contactListener());
 		registerUpdateHandler(physicsWorld);
@@ -596,10 +608,10 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 					} else if ((x1.getBody().getUserData().equals("bout") || x2.getBody().getUserData().equals("bout")) && (x1.getBody().getUserData().equals("beregL") || x2.getBody().getUserData().equals("beregL"))) {
 						bout.setContacts(1);
 					} else {
-						for (i = 0; i < sensors.size()/3; i += 1) {
-							if ((sensors.get(i*3).getStatus()!=1 )&& (x1.getBody().getUserData().equals("sens" + String.valueOf(i*3)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i*3)))) {
-								sensors.get(i*3).setStatus(1);
-								penalty =1000000;
+						for (i = 0; i < sensors.size() / 3; i += 1) {
+							if ((sensors.get(i * 3).getStatus() != 1) && (x1.getBody().getUserData().equals("sens" + String.valueOf(i * 3)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i * 3)))) {
+								sensors.get(i * 3).setStatus(1);
+								penalty = 1000000;
 
 							}
 						}
@@ -649,7 +661,6 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	@Override
 	public void setHUD() {
-		// TODO Auto-generated method stub
 
 	}
 

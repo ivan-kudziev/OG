@@ -91,7 +91,8 @@ public abstract class Kaiak extends AnimatedSprite {
 	}
 
 	private void createPhysics(final Camera camera, PhysicsWorld physicsWorld) {
-		body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyType.DynamicBody, PhysicsFactory.createFixtureDef(0, 0, 0));
+		//body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyType.DynamicBody, PhysicsFactory.createFixtureDef(0, 0, 0));
+		body = PhysicsFactory.createBoxBody(physicsWorld, this.getX(),this.getY(),this.getWidth()/3,this.getHeight(), BodyType.DynamicBody, PhysicsFactory.createFixtureDef(0, 0, 0));
 
 		body.setUserData("bout");
 		body.getFixtureList().get(0).setFriction(0.25f);
