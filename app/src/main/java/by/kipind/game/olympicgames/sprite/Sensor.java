@@ -25,17 +25,18 @@ public class Sensor extends AnimatedSprite {
 	// ---------------------------------------------
 	public Body body;
 	private int status = 0; // 0-netral ; 1 - got contact ; -1 - lost contact
+	private PhysicsConnector myPhysicsConnector;
 
 	// ---------------------------------------------
 	// CONSTRUCTOR
 	// ---------------------------------------------
 
-	public Sensor(float pX, float pY, float pWMlt,float pHMlp, VertexBufferObjectManager vbo,  PhysicsWorld physicsWorld, String userData,String graficName) {
+	public Sensor(float pX, float pY, float pWMlt, float pHMlp, VertexBufferObjectManager vbo, PhysicsWorld physicsWorld, String userData, String graficName) {
 		super(pX, pY, (ITiledTextureRegion) ResourcesManager.getInstance().gameGraf.get(graficName), vbo);
 		this.setWidth(this.getWidth() * pWMlt);
 		this.setHeight(this.getHeight() * pHMlp);
 
-		createPhysics( physicsWorld, userData);
+		createPhysics(physicsWorld, userData);
 
 	}
 
@@ -43,12 +44,16 @@ public class Sensor extends AnimatedSprite {
 	// CLASS LOGIC
 	// ---------------------------------------------
 
-	private void createPhysics( PhysicsWorld physicsWorld, String identifier) {
-		body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyDef.BodyType.StaticBody, PhysicsFactory.createFixtureDef(0, 0, 0,true));
-		body.setUserData(identifier);
-		physicsWorld.registerPhysicsConnector(new PhysicsConnector(this, body, false, false));
-	}
+	public void setBodyPos(float x, float y, float rotate) {
+		this.body.setTransform(x/32, y/32, rotate);
+		}
 
+	private void createPhysics(PhysicsWorld physicsWorld, String identifier) {
+		body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyDef.BodyType.StaticBody, PhysicsFactory.createFixtureDef(0, 0, 0, true));
+		body.setUserData(identifier);
+		myPhysicsConnector=new PhysicsConnector(this, body, true, false);
+		physicsWorld.registerPhysicsConnector(myPhysicsConnector);
+	}
 
 	public int getStatus() {
 		return status;

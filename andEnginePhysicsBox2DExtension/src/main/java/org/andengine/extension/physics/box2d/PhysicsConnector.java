@@ -45,6 +45,8 @@ public class PhysicsConnector implements IUpdateHandler, PhysicsConstants {
 
 	public PhysicsConnector(final IEntity pEntity, final Body pBody, final boolean pUdatePosition, final boolean pUpdateRotation) {
 		this(pEntity, pBody, pUdatePosition, pUpdateRotation, PIXEL_TO_METER_RATIO_DEFAULT);
+		//Log.w("myL", ""+this.mPixelToMeterRatio);
+
 	}
 
 	public PhysicsConnector(final IEntity pEntity, final Body pBody, final boolean pUdatePosition, final boolean pUpdateRotation, final float pPixelToMeterRatio) {

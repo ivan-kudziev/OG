@@ -56,6 +56,7 @@ import by.kipind.game.olympicgames.sprite.buttons.BtnGoLeft;
 import by.kipind.game.olympicgames.sprite.buttons.BtnGoRight;
 
 public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
+
 	private static final String GAME_TYPE = "RAFTING";
 	private static final String GAME_LVL_FILE_PATH = "level/rafting.lvl";
 	// ---------
@@ -66,10 +67,9 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_SVETOFOR = "svetofor";
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_L = "beregL";
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_R = "beregR";
-
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_PLAYER = "player";
 	private static int STEPS_PER_SECOND = 60;
-
+	public static final int BARER_DISTANSE_CONST = 4;
 
 	// ----------
 	private final int lvlWidth = 800;
@@ -108,7 +108,6 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	private List<Sprite> stangi;
 
 	private PhysicsWorld physicsWorld;
-
 
 
 	private Text scoreText;
@@ -193,15 +192,15 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			water.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
 			attachChild(water.get(i));
 
-			if (i % 3 == 0) {
-				voda.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
+			if (i % BARER_DISTANSE_CONST == 0) {
+				//voda.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
 
 				sensors.add(new Sensor(deltaY - water.get(i).getWidth() / 4, 1450 - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
 				sensors.add(new Sensor(deltaY + water.get(i).getWidth() / 4, 1450 - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
 				sensors.add(new Sensor(deltaY, 1450 - deltaX, 1, 1, vbom, physicsWorld, "sens" + String.valueOf(100 + i), "kaiak_sensor_gate2"));
 
-				stangi.add(new Sprite(deltaY - 22, 1450 - deltaX+19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
-				stangi.add(new Sprite(deltaY +22, 1450 - deltaX+19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
+				stangi.add(new Sprite(deltaY - 22, 1450 - deltaX + 19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
+				stangi.add(new Sprite(deltaY + 22, 1450 - deltaX + 19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
 			}
 
 			berega.add(new Sprite(deltaY - water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
@@ -212,7 +211,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			attachChild(sp);
 		}
 		for (Sensor sr : sensors) {
-			//attachChild(sr);
+			attachChild(sr);
 		}
 		for (Sprite sp : stangi) {
 			attachChild(sp);
@@ -224,6 +223,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		this.registerUpdateHandler(new TimerHandler(1 / 60f, true, new ITimerCallback() {
 			Sprite spW;
 			float wsWidthHalf;
+			int index;
 
 			@Override
 			public void onTimePassed(final TimerHandler pTimerHandler) {
@@ -238,6 +238,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 
 				wsWidthHalf = water.get(0).getWidth() / 2;
+
 				for (int i = 0; i < water.size(); i++) {
 					spW = water.get(i);
 
@@ -245,14 +246,20 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 						spW.setY(water.get((i == water.size() - 1 ? 0 : i + 1)).getY() - spW.getHeight());
 						spW.setX((float) (water.get((i == water.size() - 1 ? 0 : i + 1)).getX() + 15 + (-30 * random.nextInt(2) - 1)));
 
-						/*if(i%3==0){
-		                    sensors.get(i).setPosition(spW.getX()-spW.getWidth()/4,1450 - spW.getY());
-							sensors.get(i+1).setPosition(spW.getX()+spW.getWidth()/4,1450 - spW.getY());
-							sensors.get(i+2).setPosition(spW.getX(),1450 - spW.getY());
-							*//*sensors.add(new Sensor(deltaY-water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
-							sensors.add(new Sensor(deltaY+water.get(i).getWidth()/4,1450 - deltaX,12,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate"));
-							sensors.add(new Sensor(deltaY,1450 - deltaX,1,1, vbom,  physicsWorld,"sens"+String.valueOf(i),"kaiak_sensor_gate2"));*//*
-						}*/
+						if (i % BARER_DISTANSE_CONST == 0) {
+							index = i / BARER_DISTANSE_CONST * 3;
+							sensors.get(index).setBodyPos(spW.getX() - spW.getWidth() / 4, spW.getY(), 0);
+							sensors.get(index + 1).setBodyPos(spW.getX() + spW.getWidth() / 4, spW.getY(), 0);
+							sensors.get(index + 2).setBodyPos(spW.getX(), spW.getY(), 0);
+							sensors.get(index).setStatus(0);
+							sensors.get(index + 1).setStatus(0);
+							sensors.get(index + 2).setStatus(0);
+							index = i / BARER_DISTANSE_CONST * 2;
+							stangi.get(index).setPosition(spW.getX() - 22, spW.getY() + 19);
+							stangi.get(index + 1).setPosition(spW.getX() + 22, spW.getY() + 19);
+
+
+						}
 
 						berega.get(2 * i).setPosition(spW.getX() - wsWidthHalf, spW.getY());
 						berega.get(2 * i + 1).setPosition(spW.getX() + wsWidthHalf, spW.getY());
@@ -609,7 +616,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 						bout.setContacts(1);
 					} else {
 						for (i = 0; i < sensors.size() / 3; i += 1) {
-							if ((sensors.get(i * 3).getStatus() != 1) && (x1.getBody().getUserData().equals("sens" + String.valueOf(i * 3)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i * 3)))) {
+							if ((sensors.get(i * 3).getStatus() != 1) && (x1.getBody().getUserData().equals("sens" + String.valueOf(i * BARER_DISTANSE_CONST)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i * BARER_DISTANSE_CONST)))) {
 								sensors.get(i * 3).setStatus(1);
 								penalty = 1000000;
 
