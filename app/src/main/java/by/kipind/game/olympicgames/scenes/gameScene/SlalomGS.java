@@ -1,6 +1,5 @@
 package by.kipind.game.olympicgames.scenes.gameScene;
 
-import android.util.Log;
 import android.view.MotionEvent;
 
 import com.badlogic.gdx.math.Vector2;
@@ -56,11 +55,9 @@ import by.kipind.game.olympicgames.sprite.buttons.AnimBtn;
 import by.kipind.game.olympicgames.sprite.buttons.BtnGoLeft;
 import by.kipind.game.olympicgames.sprite.buttons.BtnGoRight;
 
-public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
+public class SlalomGS extends BaseScene implements IOnSceneTouchListener {
 
-	private static final int BARER_DISTANSE_CONST = 10;
-	private static final int BOAT_MAX_SPEED = 1;
-	//private static final String GAME_TYPE = "RAFTING";
+	private static final String GAME_TYPE = "RAFTING";
 	private static final String GAME_LVL_FILE_PATH = "level/rafting.lvl";
 	// ---------
 	private static final String TAG_ENTITY = "entity";
@@ -71,6 +68,9 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_L = "beregL";
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_R = "beregR";
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_PLAYER = "player";
+	private static int STEPS_PER_SECOND = 60;
+	public static final int BARER_DISTANSE_CONST = 4;
+
 	// ----------
 	private final int lvlWidth = 800;
 	private final int lvlHeight = 450;
@@ -101,12 +101,11 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	private List<Sprite> berega;
 	private List<Sensor> sensors;
-	//private List<Body> beregBody;
+	private List<Body> beregBody;
 
 	private List<Sprite> greenFon;
 	private List<Sprite> water;
-	private List<Sensor> stones;
-	private List<Sensor> streams;
+	private List<Sprite> stangi;
 
 	private PhysicsWorld physicsWorld;
 
@@ -119,7 +118,6 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	private Float wPersonalRecord;
 	private Integer tCounter = 0;
 	private int penalty = 0;
-	private int resetflag = -1;
 
 	@Override
 	public void createScene() {
@@ -151,8 +149,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 	@Override
 	public void disposeScene() {
-		ResourcesManager.getInstance().musicPause(2);
-		ResourcesManager.getInstance().unloadGameTextures();
+
 		camera.setHUD(null);
 		camera.setCenter(SCENE_WIDTH / 2, SCENE_HEIGHT / 2);
 		camera.setChaseEntity(null);
@@ -165,9 +162,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 		greenFon = new ArrayList<>();
 		water = new ArrayList<>();
-		stones = new ArrayList<>();
-		streams = new ArrayList<>();
-
+		stangi = new ArrayList<>();
 
 		greenFon.add(new Sprite(400, 1075, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
 		greenFon.add(new Sprite(400, 1225, resourcesManager.gameGraf.get("kaiak_green_fon"), vbom));
@@ -183,37 +178,33 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 
 		berega = new ArrayList<>();
-		//beregBody = new ArrayList<>();
+		beregBody = new ArrayList<>();
 		sensors = new ArrayList<>();
 
 
-		float deltaX = this.lvlHeight;
-		float deltaY = this.lvlWidth / 2f;
+		float deltaX = this.lvlHeight, deltaY = this.lvlWidth / 2f;
 
 		int rand;
 		for (int i = 0; deltaX >= 0; i++) {
 			deltaX = deltaX - 37f;
 			rand = random.nextInt(2);
-			deltaY = deltaY + 15 + (-30 * rand - 1); //(20f * (Math.random()+ - 10f));
-			water.add(new Sprite(deltaY, lvlTotalHeight - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
+			deltaY = (float) (deltaY + 15 + (-30 * rand - 1)); //(20f * (Math.random()+ - 10f));
+			water.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
 			attachChild(water.get(i));
 
 			if (i % BARER_DISTANSE_CONST == 0) {
 				//voda.add(new Sprite(deltaY, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_woda"), vbom));
 
-				sensors.add(new Sensor(deltaY - water.get(i).getWidth() / 4, lvlTotalHeight - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
-				sensors.add(new Sensor(deltaY + water.get(i).getWidth() / 4, lvlTotalHeight - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
+				sensors.add(new Sensor(deltaY - water.get(i).getWidth() / 4, 1450 - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
+				sensors.add(new Sensor(deltaY + water.get(i).getWidth() / 4, 1450 - deltaX, 12, 1, vbom, physicsWorld, "sens" + String.valueOf(i), "kaiak_sensor_gate"));
+				sensors.add(new Sensor(deltaY, 1450 - deltaX, 1, 1, vbom, physicsWorld, "sens" + String.valueOf(100 + i), "kaiak_sensor_gate2"));
 
-				streams.add(new Sensor(deltaY, lvlTotalHeight - deltaX, 3, 1, vbom, physicsWorld, "stream", "kaiak_stream"));
-
-				stones.add(new Sensor(deltaY - 22, lvlTotalHeight - deltaX + 19, 1, 1, vbom, physicsWorld, "stone", "kaiak_stone"));
-				stones.add(new Sensor(deltaY + 22, lvlTotalHeight - deltaX + 19, 1, 1, vbom, physicsWorld, "stone", "kaiak_stone"));
-				//stones.add(new Sprite(deltaY - 22, 1450 - deltaX + 19, resourcesManager.gameGraf.get("kaiak_stone"), vbom));
-				//stones.add(new Sprite(deltaY + 22, 1450 - deltaX + 19, resourcesManager.gameGraf.get("kaiak_stone"), vbom));
+				stangi.add(new Sprite(deltaY - 22, 1450 - deltaX + 19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
+				stangi.add(new Sprite(deltaY + 22, 1450 - deltaX + 19, resourcesManager.gameGraf.get("kaiak_shtanga"), vbom));
 			}
 
-			berega.add(new Sprite(deltaY - water.get(0).getWidth() / 2, lvlTotalHeight - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
-			berega.add(new Sprite(deltaY + water.get(0).getWidth() / 2, lvlTotalHeight - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
+			berega.add(new Sprite(deltaY - water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
+			berega.add(new Sprite(deltaY + water.get(0).getWidth() / 2, 1450 - deltaX, resourcesManager.gameGraf.get("kaiak_pesok"), vbom));
 
 		}
 		for (Sprite sp : berega) {
@@ -222,11 +213,8 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 		for (Sensor sr : sensors) {
 			attachChild(sr);
 		}
-		for (Sensor sp : stones) {
+		for (Sprite sp : stangi) {
 			attachChild(sp);
-		}
-		for (Sprite st : streams) {
-			attachChild(st);
 		}
 
 		attachChild(new Sprite(this.lvlWidth / 4, this.lvlHeight / 2f, resourcesManager.gameGraf.get("shoot_tree"), vbom));
@@ -239,55 +227,50 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 			@Override
 			public void onTimePassed(final TimerHandler pTimerHandler) {
-				//	Log.v("myL", "0=" + greenFon.get(0).getX() + "<>" + greenFon.get(0).getY() + "  1=" + greenFon.get(1).getX() + "<>" + greenFon.get(1).getY() + "  2=" + greenFon.get(2).getX() + "<>" + greenFon.get(2).getY());
-				if (resetflag < 0) {
-					for (Sprite sp : greenFon) {
 
-						if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + 225 && camera.getCenterY() > 225) {
-							sp.setY(camera.getCenterY() - 225 - sp.getHeight() / 2);
-							break;
-						}
+				for (Sprite sp : greenFon) {
+
+					if (sp.getSceneCenterCoordinates()[1] - sp.getHeight() / 2 > camera.getCenterY() + 225 && camera.getCenterY() > 225) {
+						sp.setY(camera.getCenterY() - 225 - sp.getHeight() / 2 + 1);
+						break;
 					}
-
-
-					wsWidthHalf = water.get(0).getWidth() / 2;
-
-					for (int i = 0; i < water.size(); i++) {
-						spW = water.get(i);
-
-						if (spW.getSceneCenterCoordinates()[1] - spW.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2) {
-							spW.setY(water.get((i == water.size() - 1 ? 0 : i + 1)).getY() - spW.getHeight());
-							spW.setX(water.get((i == water.size() - 1 ? 0 : i + 1)).getX() + 15 + (-30 * random.nextInt(2) - 1));
-
-							if (i % BARER_DISTANSE_CONST == 0) {
-								index = i / BARER_DISTANSE_CONST;
-								streams.get(index).setBodyPos(spW.getX(), spW.getY(), 0);
-								streams.get(index).setStatus(0);
-								index = i / BARER_DISTANSE_CONST * 2;
-								sensors.get(index).setBodyPos(spW.getX() - spW.getWidth() / 4, spW.getY(), 0);
-								sensors.get(index + 1).setBodyPos(spW.getX() + spW.getWidth() / 4, spW.getY(), 0);
-								sensors.get(index).setStatus(0);
-								sensors.get(index + 1).setStatus(0);
-								//index = i / BARER_DISTANSE_CONST * 2;
-								stones.get(index).setBodyPos(spW.getX() - 22, spW.getY() + 19, 0);
-								stones.get(index + 1).setBodyPos(spW.getX() + 22, spW.getY() + 19, 0);
-
-
-							}
-
-							berega.get(2 * i).setPosition(spW.getX() - wsWidthHalf, spW.getY());
-							berega.get(2 * i + 1).setPosition(spW.getX() + wsWidthHalf, spW.getY());
-							break;
-						}
-					}
-				} else {
-					resetflag--;
 				}
+
+
+				wsWidthHalf = water.get(0).getWidth() / 2;
+
+				for (int i = 0; i < water.size(); i++) {
+					spW = water.get(i);
+
+					if (spW.getSceneCenterCoordinates()[1] - spW.getHeight() / 2 > camera.getCenterY() + lvlHeight / 2) {
+						spW.setY(water.get((i == water.size() - 1 ? 0 : i + 1)).getY() - spW.getHeight());
+						spW.setX((float) (water.get((i == water.size() - 1 ? 0 : i + 1)).getX() + 15 + (-30 * random.nextInt(2) - 1)));
+
+						if (i % BARER_DISTANSE_CONST == 0) {
+							index = i / BARER_DISTANSE_CONST * 3;
+							sensors.get(index).setBodyPos(spW.getX() - spW.getWidth() / 4, spW.getY(), 0);
+							sensors.get(index + 1).setBodyPos(spW.getX() + spW.getWidth() / 4, spW.getY(), 0);
+							sensors.get(index + 2).setBodyPos(spW.getX(), spW.getY(), 0);
+							sensors.get(index).setStatus(0);
+							sensors.get(index + 1).setStatus(0);
+							sensors.get(index + 2).setStatus(0);
+							index = i / BARER_DISTANSE_CONST * 2;
+							stangi.get(index).setPosition(spW.getX() - 22, spW.getY() + 19);
+							stangi.get(index + 1).setPosition(spW.getX() + 22, spW.getY() + 19);
+
+
+						}
+
+						berega.get(2 * i).setPosition(spW.getX() - wsWidthHalf, spW.getY());
+						berega.get(2 * i + 1).setPosition(spW.getX() + wsWidthHalf, spW.getY());
+						break;
+					}
+				}
+
 			}
 
 		}));
 	}
-
 
 	private void setUpdateProces() {
 
@@ -307,7 +290,10 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, final float pTouchAreaLocalY) {
 				super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-				return pSceneTouchEvent.getAction() == MotionEvent.ACTION_DOWN && SceneObjectTouch(this);
+				if (pSceneTouchEvent.getAction() == MotionEvent.ACTION_DOWN) {
+					return SceneObjectTouch(this);
+				}
+				return false;
 			}
 		};
 
@@ -356,7 +342,10 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, final float pTouchAreaLocalY) {
 				super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-				return pSceneTouchEvent.getAction() == MotionEvent.ACTION_DOWN && SceneObjectTouch(this);
+				if (pSceneTouchEvent.getAction() == MotionEvent.ACTION_DOWN) {
+					return SceneObjectTouch(this);
+				}
+				return false;
 			}
 		};
 		hudBtnReplay.setScale(0.5f);
@@ -366,7 +355,10 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, final float pTouchAreaLocalY) {
 				super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-				return pSceneTouchEvent.getAction() == MotionEvent.ACTION_DOWN && SceneObjectTouch(this);
+				if (pSceneTouchEvent.getAction() == MotionEvent.ACTION_DOWN) {
+					return SceneObjectTouch(this);
+				}
+				return false;
 			}
 		};
 		hudBtnBack.setScale(0.5f);
@@ -455,27 +447,17 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 				scoreText.setText(msg);
 */
 				//if (!player.isFinish() && svetofor.getStatus() == Color.GREEN) {
-
+				tCounter += 1 + penalty;
+				scoreText.setText(String.valueOf((double) tCounter / 1000));
+				penalty = 0;
 				//}
 
-				if (bout.getContacts() == 1) {// bereg
-					bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y * 0.94f);
-					//bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
+				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed() || bout.getContacts() == 1) {
+					bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
 				}
-				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed()) {//techenie trenie
-					bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y * 0.999f);
-				}
-
-				if (-bout.body.getLinearVelocity().y < bout.getMaxSpeed()) {//techenie
-					bout.body.applyLinearImpulse(0f, -0.05f, bout.body.getPosition().x, bout.body.getPosition().y);
-				}
-				if (penalty < 0) {
-					bout.body.applyLinearImpulse(0f, penalty, bout.body.getPosition().x, bout.body.getPosition().y);
-					penalty = 0;
-				}
-
-
-
+				/*if (bout.getContacts()==1) {
+					bout.body.setLinearVelocity(0,  bout.body.getLinearVelocity().y/2);
+				}*/
 
 				/*bodyBeregL.setTransform(bodyBeregL.getPosition().x, bout.body.getPosition().y, 0);
 				bodyBeregR.setTransform(bodyBeregR.getPosition().x, bout.body.getPosition().y, 0);
@@ -487,17 +469,12 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 					}
 				}
-				tCounter += 1 + penalty;
-				scoreText.setText(String.valueOf((double) bout.body.getLinearVelocity().y));
-				penalty = 0;
-//TODO: select next stone body positions if boat is ahead.
 
 				if (Math.abs(bout.body.getLinearVelocity().x) > 0.02) {
 					bout.body.setLinearVelocity((bout.body.getLinearVelocity().x < 0 ? bout.body.getLinearVelocity().x + 0.01f : bout.body.getLinearVelocity().x - 0.01f), bout.body.getLinearVelocity().y);
-
-				}
-				if (Math.abs(bout.body.getLinearVelocity().x) < 0.02) {
-					bout.setCurrentTileIndex(0);
+					if (Math.abs(bout.body.getLinearVelocity().x) < 0.02) {
+						bout.setCurrentTileIndex(0);
+					}
 				}
 				//	}
 			}
@@ -507,9 +484,8 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 	}
 
 	private void createPhysics() {
-
-		int STEPS_PER_SECOND = 60;
-		physicsWorld = new FixedStepPhysicsWorld(STEPS_PER_SECOND, new Vector2(0, 0), false);
+//TODO: repiar gravity -0.2
+		physicsWorld = new FixedStepPhysicsWorld(STEPS_PER_SECOND, new Vector2(0, -0.2f), false);
 		physicsWorld.setContactListener(contactListener());
 		registerUpdateHandler(physicsWorld);
 
@@ -528,7 +504,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 				camera.setBounds(0, 0, width, height);
 				camera.setBoundsEnabled(true);
 
-				return RaftingGS.this;
+				return SlalomGS.this;
 			}
 
 		});
@@ -555,7 +531,7 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 						}
 					};
-					bout.setMaxSpeed(BOAT_MAX_SPEED);
+					bout.setMaxSpeed(2);
 					camera.setChaseEntity(bout);
 					levelObject = bout;
 
@@ -568,16 +544,15 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 				} else if (type.equals(TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_L)) {
 					beregL = new Sprite(x, y, resourcesManager.gameGraf.get("kaiak_pesok"), vbom);
-					beregL.setVisible(true);
+					beregL.setVisible(false);
 					bodyBeregL = PhysicsFactory.createBoxBody(physicsWorld, beregL, BodyDef.BodyType.DynamicBody, FIXTURE_DEF);
-					bodyBeregL = PhysicsFactory.createBoxBody(physicsWorld, x,y,beregL.getWidth()*2f,beregL.getHeight(), BodyDef.BodyType.DynamicBody, FIXTURE_DEF);
 					bodyBeregL.setUserData(TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_L);
 					physicsWorld.registerPhysicsConnector(new PhysicsConnector(beregL, bodyBeregL, true, false));
 					levelObject = beregL;
 				} else if (type.equals(TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_R)) {
 					beregR = new Sprite(x, y, resourcesManager.gameGraf.get("kaiak_pesok"), vbom);
-					beregR.setVisible(true);
-					bodyBeregR = PhysicsFactory.createBoxBody(physicsWorld, x,y,beregR.getWidth()*2f,beregR.getHeight(), BodyDef.BodyType.DynamicBody, FIXTURE_DEF);
+					beregR.setVisible(false);
+					bodyBeregR = PhysicsFactory.createBoxBody(physicsWorld, beregR, BodyDef.BodyType.DynamicBody, FIXTURE_DEF);
 					bodyBeregR.setUserData(TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_R);
 					physicsWorld.registerPhysicsConnector(new PhysicsConnector(beregR, bodyBeregR, true, false));
 					levelObject = beregR;
@@ -640,18 +615,10 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 					} else if ((x1.getBody().getUserData().equals("bout") || x2.getBody().getUserData().equals("bout")) && (x1.getBody().getUserData().equals("beregL") || x2.getBody().getUserData().equals("beregL"))) {
 						bout.setContacts(1);
 					} else {
-						/*for (i = 0; i < sensors.size() / 2; i += 1) {
-							if ((sensors.get(i * 2).getStatus() != 1) && (x1.getBody().getUserData().equals("sens" + String.valueOf(i * BARER_DISTANSE_CONST)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i * BARER_DISTANSE_CONST)))) {
-								sensors.get(i * 2).setStatus(1);
-								penalty = -1000000;
-
-							}
-						}*/
-
-						for (i = 0; i < streams.size(); i += 1) {
-							if ((streams.get(i).getStatus() != 1) && (x1.getBody().getUserData().equals("stream"))) {
-								streams.get(i).setStatus(1);
-								penalty = -2;
+						for (i = 0; i < sensors.size() / 3; i += 1) {
+							if ((sensors.get(i * 3).getStatus() != 1) && (x1.getBody().getUserData().equals("sens" + String.valueOf(i * BARER_DISTANSE_CONST)) || x2.getBody().getUserData().equals("sens" + String.valueOf(i * BARER_DISTANSE_CONST)))) {
+								sensors.get(i * 3).setStatus(1);
+								penalty = 1000000;
 
 							}
 						}
@@ -749,52 +716,9 @@ public class RaftingGS extends BaseScene implements IOnSceneTouchListener {
 
 		svetofor.reSet();
 		svetofor.Start();
-		resetBg();
+
 		bout.reSet();
 		camera.setChaseEntity(bout);
-		resetflag = 100;
 	}
 
-	private void resetBg() {
-		float deltaY = this.lvlWidth / 2f, deltaX = this.lvlHeight;
-		greenFon.get(0).setPosition(400, 1075);
-		greenFon.get(1).setPosition(400, 1225);
-		greenFon.get(2).setPosition(400, 1375);
-		greenFon.get(3).setPosition(400, 1525);
-
-		//greenFon.get(0).setPosition(400, 1025);
-		//greenFon.get(1).setPosition(400, 1195);
-		//greenFon.get(2).setPosition(400, 1365);
-
-		Log.v("myL", "reset 0=" + greenFon.get(0).getX() + "<>" + greenFon.get(0).getY() + "  1=" + greenFon.get(1).getX() + "<>" + greenFon.get(1).getY() + "  2=" + greenFon.get(2).getX() + "<>" + greenFon.get(2).getY());
-
-		int rand, index;
-		for (int i = 0; deltaX >= 0; i++) {
-			deltaX = deltaX - 37f;
-			rand = random.nextInt(2);
-			deltaY = deltaY + 15 + (-30 * rand - 1); //(20f * (Math.random()+ - 10f));
-			water.get(i).setPosition(deltaY, lvlTotalHeight - deltaX);
-
-
-			if (i % BARER_DISTANSE_CONST == 0) {
-				index = i / BARER_DISTANSE_CONST;
-				streams.get(index).setBodyPos(deltaY, lvlTotalHeight - deltaX, 0);
-				streams.get(index).setStatus(0);
-				index = i / BARER_DISTANSE_CONST * 2;
-				sensors.get(index).setBodyPos(deltaY - water.get(i).getWidth() / 4, lvlTotalHeight - deltaX, 0);
-				sensors.get(index + 1).setBodyPos(deltaY + water.get(i).getWidth() / 4, lvlTotalHeight - deltaX, 0);
-				sensors.get(index).setStatus(0);
-				sensors.get(index + 1).setStatus(0);
-				//index = i / BARER_DISTANSE_CONST * 2;
-				stones.get(index).setBodyPos(deltaY - 22, lvlTotalHeight - deltaX + 19, 0);
-				stones.get(index + 1).setBodyPos(deltaY + 22, lvlTotalHeight - deltaX + 19, 0);
-
-
-			}
-
-			berega.get(2 * i).setPosition(deltaY - water.get(0).getWidth() / 2, lvlTotalHeight - deltaX);
-			berega.get(2 * i + 1).setPosition(deltaY + water.get(0).getWidth() / 2, lvlTotalHeight - deltaX);
-
-		}
-	}
 }

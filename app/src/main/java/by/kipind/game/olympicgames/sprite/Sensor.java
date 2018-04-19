@@ -3,7 +3,7 @@ package by.kipind.game.olympicgames.sprite;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 
-import org.andengine.entity.sprite.AnimatedSprite;
+import org.andengine.entity.sprite.Sprite;
 import org.andengine.extension.physics.box2d.PhysicsConnector;
 import org.andengine.extension.physics.box2d.PhysicsFactory;
 import org.andengine.extension.physics.box2d.PhysicsWorld;
@@ -16,7 +16,7 @@ import by.kipind.game.olympicgames.ResourcesManager;
  * Created by kip on 03.09.2017.
  */
 
-public class Sensor extends AnimatedSprite {
+public class Sensor extends Sprite {
 	final String LOG_TAG = "myLogs";
 	private final int[] animFrame = new int[]{0, 1, 2};
 
@@ -45,13 +45,21 @@ public class Sensor extends AnimatedSprite {
 	// ---------------------------------------------
 
 	public void setBodyPos(float x, float y, float rotate) {
-		this.body.setTransform(x/32, y/32, rotate);
-		}
+		this.body.setTransform(x / 32, y / 32, rotate);
+	}
 
 	private void createPhysics(PhysicsWorld physicsWorld, String identifier) {
-		body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyDef.BodyType.StaticBody, PhysicsFactory.createFixtureDef(0, 0, 0, true));
+		switch (identifier) {
+			case "stone":
+				body = PhysicsFactory.createCircleBody(physicsWorld, this, BodyDef.BodyType.StaticBody, PhysicsFactory.createFixtureDef(1000, 1f, 0f, false));
+				break;
+			default:
+				body = PhysicsFactory.createBoxBody(physicsWorld, this, BodyDef.BodyType.StaticBody, PhysicsFactory.createFixtureDef(0, 0, 0, true));
+
+		}
+
 		body.setUserData(identifier);
-		myPhysicsConnector=new PhysicsConnector(this, body, true, false);
+		myPhysicsConnector = new PhysicsConnector(this, body, true, false);
 		physicsWorld.registerPhysicsConnector(myPhysicsConnector);
 	}
 

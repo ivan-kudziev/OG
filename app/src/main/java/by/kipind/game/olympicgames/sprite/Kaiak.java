@@ -35,6 +35,7 @@ public abstract class Kaiak extends AnimatedSprite {
 	private int contacts = 0;
 	private float speed = 0;
 	private float maxSpeed = 10000;
+	private float minSpeed=0;
 	private float speedBeforJump = 0;
 	private Long frameDuration = 0l;
 	private int longJumpDeg = 90;
@@ -166,27 +167,6 @@ public abstract class Kaiak extends AnimatedSprite {
 	}
 
 
-	public boolean jumpLong(Integer jumpDeg) {
-		int deg = this.longJumpDeg;
-		// :TODO
-		ResourcesManager.getInstance().playSoundFromStack("barier_jump");
-		if (plState == 1) {
-			if (!jumpDeg.equals(null)) {
-				deg = jumpDeg;
-			}
-			stopAnimation(8);
-			speedBeforJump = this.speed * 0.8f;
-			body.setLinearVelocity(0f, 0f);
-			body.applyLinearImpulse((float) (speedBeforJump * Math.cos(Math.toRadians(deg))), (float) (speedBeforJump * Math.sin(Math.toRadians(deg))), body.getPosition().x,
-					body.getPosition().y);
-			speedBeforJump = 4;
-
-		} else {
-			return false;
-		}
-		plState = 3;
-		return true;
-	}
 
 	public void setLinearSpeed(float newXSpeed, float newYSpeed) {
 		body.setLinearVelocity(newXSpeed, newYSpeed);
@@ -251,9 +231,15 @@ public abstract class Kaiak extends AnimatedSprite {
 	public float getMaxSpeed() {
 		return maxSpeed;
 	}
+	public float getMinSpeed() {
+		return minSpeed;
+	}
 
 	public void setMaxSpeed(float maxSpeed) {
 		this.maxSpeed = maxSpeed;
+	}
+	public void setMinSpeed(float minSpeed) {
+		this.minSpeed = minSpeed;
 	}
 
 	public float getStartXPos() {
