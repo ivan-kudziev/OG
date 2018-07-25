@@ -57,6 +57,7 @@ import by.kipind.game.olympicgames.sprite.buttons.BtnGoRight;
 
 public class SlalomGS extends BaseScene implements IOnSceneTouchListener {
 
+	public static final int BARER_DISTANSE_CONST = 4;
 	private static final String GAME_TYPE = "RAFTING";
 	private static final String GAME_LVL_FILE_PATH = "level/rafting.lvl";
 	// ---------
@@ -69,8 +70,6 @@ public class SlalomGS extends BaseScene implements IOnSceneTouchListener {
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_BEREG_R = "beregR";
 	private static final Object TAG_ENTITY_ATTRIBUTE_TYPE_VALUE_PLAYER = "player";
 	private static int STEPS_PER_SECOND = 60;
-	public static final int BARER_DISTANSE_CONST = 4;
-
 	// ----------
 	private final int lvlWidth = 800;
 	private final int lvlHeight = 450;
@@ -448,12 +447,14 @@ public class SlalomGS extends BaseScene implements IOnSceneTouchListener {
 */
 				//if (!player.isFinish() && svetofor.getStatus() == Color.GREEN) {
 				tCounter += 1 + penalty;
-				scoreText.setText(String.valueOf((double) tCounter / 1000));
+				scoreText.setText(String.valueOf(bout.body.getLinearVelocity().x));
 				penalty = 0;
 				//}
-
-				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed() || bout.getContacts() == 1) {
+				//
+				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed()|| bout.getContacts() == 1) {
 					bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
+					//bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y - (bout.getMaxSpeed()-bout.body.getLinearVelocity().y) * 0.5f);
+
 				}
 				/*if (bout.getContacts()==1) {
 					bout.body.setLinearVelocity(0,  bout.body.getLinearVelocity().y/2);
