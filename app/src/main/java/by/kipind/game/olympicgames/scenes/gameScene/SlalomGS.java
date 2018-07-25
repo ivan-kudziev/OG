@@ -423,46 +423,17 @@ public class SlalomGS extends BaseScene implements IOnSceneTouchListener {
 			@Override
 			public void onTimePassed(final TimerHandler pTimerHandler) {
 
-				//if (sceneReadyFlag) {
 
-				/*if (svetofor.getStatus() == Color.GREEN) {
-					tCounter++;
-					scoreText.setText(String.valueOf((double) tCounter / 1000));
-				} else {
-					bout.body.setLinearVelocity(0, 0);
-				}
-*/
-				/*msg = "";
-				for (Sensor s : sensors) {
-					//	msg+=String.valueOf(s.getStatus())+"|";
-
-				}
-				msg += String.valueOf(sensors.get(0).getStatus()) + "|";
-				msg += String.valueOf(sensors.get(1).getStatus()) + "|";
-				msg += String.valueOf(sensors.get(2).getStatus()) + "|";
-				msg += String.valueOf(sensors.get(3).getStatus()) + "|";
-				//scoreText.setText(String.valueOf(bout.body.getLocalPoint(new Vector2(bout.getX(),bout.getY())).y)+"<>"+String.valueOf(bout.getY()));
-
-				scoreText.setText(msg);
-*/
-				//if (!player.isFinish() && svetofor.getStatus() == Color.GREEN) {
 				tCounter += 1 + penalty;
 				scoreText.setText(String.valueOf(bout.body.getLinearVelocity().x));
 				penalty = 0;
-				//}
-				//
-				if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed()|| bout.getContacts() == 1) {
+
+			/*	if (-bout.body.getLinearVelocity().y > bout.getMaxSpeed()|| bout.getContacts() == 1) {
 					bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y + (-bout.body.getLinearVelocity().y * 0.01f));
-					//bout.body.setLinearVelocity(bout.body.getLinearVelocity().x, bout.body.getLinearVelocity().y - (bout.getMaxSpeed()-bout.body.getLinearVelocity().y) * 0.5f);
 
 				}
-				/*if (bout.getContacts()==1) {
-					bout.body.setLinearVelocity(0,  bout.body.getLinearVelocity().y/2);
-				}*/
-
-				/*bodyBeregL.setTransform(bodyBeregL.getPosition().x, bout.body.getPosition().y, 0);
-				bodyBeregR.setTransform(bodyBeregR.getPosition().x, bout.body.getPosition().y, 0);
 */
+
 				for (Sprite wLine : water) {
 					if (wLine.getY() - wLine.getHeight() / 2 <= bout.getY() && wLine.getY() + wLine.getHeight() / 2 >= bout.getY()) {
 						bodyBeregL.setTransform((wLine.getX() - wLine.getWidth() / 2) / 32, bout.body.getPosition().y, 0);
@@ -471,13 +442,13 @@ public class SlalomGS extends BaseScene implements IOnSceneTouchListener {
 					}
 				}
 
-				if (Math.abs(bout.body.getLinearVelocity().x) > 0.02) {
+				/*if (Math.abs(bout.body.getLinearVelocity().x) > 0.02) {
 					bout.body.setLinearVelocity((bout.body.getLinearVelocity().x < 0 ? bout.body.getLinearVelocity().x + 0.01f : bout.body.getLinearVelocity().x - 0.01f), bout.body.getLinearVelocity().y);
 					if (Math.abs(bout.body.getLinearVelocity().x) < 0.02) {
 						bout.setCurrentTileIndex(0);
 					}
-				}
-				//	}
+				}*/
+
 			}
 		}));
 
@@ -486,7 +457,7 @@ public class SlalomGS extends BaseScene implements IOnSceneTouchListener {
 
 	private void createPhysics() {
 //TODO: repiar gravity -0.2
-		physicsWorld = new FixedStepPhysicsWorld(STEPS_PER_SECOND, new Vector2(0, -0.2f), false);
+		physicsWorld = new FixedStepPhysicsWorld(STEPS_PER_SECOND, new Vector2(0, 0f), false);
 		physicsWorld.setContactListener(contactListener());
 		registerUpdateHandler(physicsWorld);
 
